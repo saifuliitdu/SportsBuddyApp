@@ -1,0 +1,63 @@
+include ../elements/_widget-list
+
+header.page-header
+	// RD Navbar
+	.rd-navbar-wrap
+		nav.rd-navbar.rd-navbar-sidebar(data-layout='rd-navbar-fixed',  data-sm-layout='rd-navbar-fixed', data-md-device-layout='rd-navbar-sidebar', data-md-layout='rd-navbar-sidebar', data-lg-layout='rd-navbar-sidebar', data-lg-device-layout="rd-navbar-sidebar", data-sm-auto-height='false', data-md-auto-height='false', data-lg-auto-height='false')
+			// RD Navbar Toggle
+			button.rd-navbar-sidebar-toggle(data-rd-navbar-toggle='.rd-navbar-sidebar-inner')
+				span
+			.rd-navbar-sidebar-inner
+				.rd-navbar-collapse-toggle(data-rd-navbar-toggle='.rd-navbar-collapse')
+					span
+				.rd-navbar-top-panel.rd-navbar-collapse
+					.rd-navbar-top-panel-inner
+						//- Contact Info
+						address.contact-info
+							ul.group-lg
+								li
+									.unit.unit-middle.unit-horizontal.unit-spacing-xs.unit-xs-top
+										.unit__left
+											span.icon.text-middle.fa-phone
+										.unit__body
+											.p
+												a.text-middle(href='callto:#') 1-800-1234-567
+								li
+									.unit.unit-middle.unit-horizontal.unit-spacing-xs.unit-xs-top
+										.unit__left
+											span.icon.text-middle.fa-envelope
+										.unit__body
+											.p
+												a.text-middle(href='mailto:#') info@demolink.org
+								li
+									.unit.unit-middle.unit-horizontal.unit-spacing-xs.unit-xs-top
+										.unit__left
+											span.icon.text-middle.fa-map-marker
+										.unit__body
+											.p
+												a.text-middle(href='contacts.html') 2130 Fulton Street San Diego, CA 94117-1080 USA
+				.rd-navbar-inner
+					// RD Navbar Panel
+					.rd-navbar-panel
+						// RD Navbar Toggle
+						button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap')
+							span
+						// RD Navbar Brand
+						.rd-navbar-brand
+							a.brand-name(href='index.html')
+								img(src="images/brand.png", width="180", height="29", alt="")
+
+					.rd-navbar-aside-right
+						.rd-navbar-nav-wrap
+							include ../_navigation
+
+						//RD Navbar Search
+						.rd-navbar-search
+							a.rd-navbar-search-toggle(data-rd-navbar-toggle=".rd-navbar-search" href="#")
+								span
+							form.rd-search(action="search-results.html" data-search-live="rd-search-results-live" method="GET")
+								div.form-wrap
+									label.form-label(for="rd-navbar-search-form-input" class="form-label") Type and hit enter...
+									input(class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off")
+									#rd-search-results-live.rd-search-results-live
+								button.rd-search-form-submit.fa-search

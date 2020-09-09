@@ -1,0 +1,40 @@
+﻿@using SportsBuddy.Data;
+@using SportsBuddy.Models.AccountViewModels;
+
+@model RegisterViewModel
+@inject SignInManager<ApplicationUser> SignInManager
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<style>
+    body {
+        background-color: #777;
+    }
+</style>
+
+<div class="row" style="margin-top: 100px;">
+    <div class="col-md-12 text-center">
+        <div class="col-md-8 col-xs-offset-2">
+            <div class="card bg-gray-lighter" style="padding: 50px;font-weight:bold; border-radius: 15px;">
+                @{
+                    if (ViewBag.message != null)
+                    {
+                        <h3 class="card-title text-info" style="font-weight:bold;">Registration Successful</h3>
+                        <p class="card-text text-danger" style="font-weight:bold;">@ViewBag.message</p>
+                    }
+                    else
+                    {
+                        <h3 class="card-title text-info" style="font-weight:bold;">Error Occured</h3>
+                        <p class="card-text text-danger" style="font-weight:bold;">@ViewBag.error</p>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

@@ -1,0 +1,36 @@
+C:\ZDrive Folders\Repository\CutOutWiz\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\obj\Debug\netcoreapp2.0\CutOutWizWebApp.csprojAssemblyReference.cache
+C:\ZDrive Folders\Repository\CutOutWiz\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\ZDrive Folders\Repository\CutOutWiz\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\obj\Debug\netcoreapp2.0\CutOutWizWebApp.AssemblyInfoInputs.cache
+C:\ZDrive Folders\Repository\CutOutWiz\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\obj\Debug\netcoreapp2.0\CutOutWizWebApp.AssemblyInfo.cs
+C:\ZDrive Folders\Repository\CutOutWiz\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\bin\Debug\netcoreapp2.0\CutOutWizWebApp.deps.json
+C:\ZDrive Folders\Repository\CutOutWiz\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\bin\Debug\netcoreapp2.0\CutOutWizWebApp.runtimeconfig.json
+C:\ZDrive Folders\Repository\CutOutWiz\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\bin\Debug\netcoreapp2.0\CutOutWizWebApp.runtimeconfig.dev.json
+C:\ZDrive Folders\Repository\CutOutWiz\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\bin\Debug\netcoreapp2.0\CutOutWizWebApp.dll
+C:\ZDrive Folders\Repository\CutOutWiz\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\bin\Debug\netcoreapp2.0\CutOutWizWebApp.pdb
+C:\ZDrive Folders\Repository\CutOutWiz\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\obj\Debug\netcoreapp2.0\CutOutWizWebApp.dll
+C:\ZDrive Folders\Repository\CutOutWiz\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\obj\Debug\netcoreapp2.0\CutOutWizWebApp.pdb
+C:\ZDrive Folders\Repository\CutOutWiz\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\bin\Debug\netcoreapp2.0\appsettings.Development.json
+C:\ZDrive Folders\Repository\CutOutWiz\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\bin\Debug\netcoreapp2.0\appsettings.json
+C:\ZDrive Folders\Repository\CutOutWiz\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\bin\Debug\netcoreapp2.0\bower.json
+C:\ZDrive Folders\Repository\CutOutWiz\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\bin\Debug\netcoreapp2.0\bundleconfig.json
+C:\ZDrive Folders\Repository\CutOutWiz\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\bin\Debug\netcoreapp2.0\Properties\launchSettings.json
+C:\ZDrive Folders\Repository\CutOutWiz\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\obj\Debug\netcoreapp2.0\CutOutWizWebApp.csproj.CoreCompileInputs.cache
+C:\ZDrive Folders\Repository\CutOutWiz\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\obj\Debug\netcoreapp2.0\CutOutWizWebApp.genruntimeconfig.cache
+G:\KOW\Projects\CutOutWizWebApp\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\bin\Debug\netcoreapp2.0\appsettings.Development.json
+G:\KOW\Projects\CutOutWizWebApp\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\bin\Debug\netcoreapp2.0\appsettings.json
+G:\KOW\Projects\CutOutWizWebApp\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\bin\Debug\netcoreapp2.0\bower.json
+G:\KOW\Projects\CutOutWizWebApp\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\bin\Debug\netcoreapp2.0\bundleconfig.json
+G:\KOW\Projects\CutOutWizWebApp\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\bin\Debug\netcoreapp2.0\Properties\launchSettings.json
+G:\KOW\Projects\CutOutWizWebApp\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\bin\Debug\netcoreapp2.0\CutOutWizWebApp.deps.json
+G:\KOW\Projects\CutOutWizWebApp\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\bin\Debug\netcoreapp2.0\CutOutWizWebApp.runtimeconfig.json
+G:\KOW\Projects\CutOutWizWebApp\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\bin\Debug\netcoreapp2.0\CutOutWizWebApp.runtimeconfig.dev.json
+G:\KOW\Projects\CutOutWizWebApp\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\bin\Debug\netcoreapp2.0\CutOutWizWebApp.dll
+G:\KOW\Projects\CutOutWizWebApp\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\bin\Debug\netcoreapp2.0\CutOutWizWebApp.pdb
+G:\KOW\Projects\CutOutWizWebApp\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\obj\Debug\netcoreapp2.0\CutOutWizWebApp.csprojAssemblyReference.cache
+G:\KOW\Projects\CutOutWizWebApp\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\obj\Debug\netcoreapp2.0\CutOutWizWebApp.csproj.CoreCompileInputs.cache
+G:\KOW\Projects\CutOutWizWebApp\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+G:\KOW\Projects\CutOutWizWebApp\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\obj\Debug\netcoreapp2.0\CutOutWizWebApp.AssemblyInfoInputs.cache
+G:\KOW\Projects\CutOutWizWebApp\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\obj\Debug\netcoreapp2.0\CutOutWizWebApp.AssemblyInfo.cs
+G:\KOW\Projects\CutOutWizWebApp\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\obj\Debug\netcoreapp2.0\CutOutWizWebApp.dll
+G:\KOW\Projects\CutOutWizWebApp\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\obj\Debug\netcoreapp2.0\CutOutWizWebApp.pdb
+G:\KOW\Projects\CutOutWizWebApp\cutoutwizwebapp\CutOutWizWebApp\CutOutWizWebApp\obj\Debug\netcoreapp2.0\CutOutWizWebApp.genruntimeconfig.cache

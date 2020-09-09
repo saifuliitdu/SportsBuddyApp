@@ -1,0 +1,152 @@
+/*
+*
+* Page Loaders
+* --------------------------------------------------
+*/
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #111111;
+  /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #111111 0%, black 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #111111), color-stop(100%, black));
+  /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover, #111111 0%, black 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, #111111 0%, black 100%);
+  /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, #111111 0%, black 100%);
+  /* IE10+ */
+  background: radial-gradient(ellipse at center, #111111 0%, black 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#111111', endColorstr='#000000', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+  z-index: 1000;
+}
+.preloader .logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: auto;
+  max-width: 90%;
+  height: 70%;
+  transform: translate(-50%, -65%);
+}
+.preloader .brand {
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  color: #FFF;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%);
+  text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  font: 700 32px/1 "Lato", sans-serif;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 44px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    font-size: 90px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    font-size: 120px;
+  }
+}
+
+.preloader .brand sup {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 80px;
+  color: #2fd3b0;
+
+  font-size: 80%;
+  vertical-align: super;
+}
+
+.preloader {
+  opacity: 1;
+  transition: 1s all ease;
+}
+.preloader .logo, .preloader .brand {
+  opacity: 0;
+}
+.preloader .logo {
+  transition: 0.7s all cubic-bezier(0.645, 0.045, 0.355, 1);
+  transform: translate(-50%, -65%);
+}
+.preloader .brand {
+  transition: 0.7s all cubic-bezier(0.645, 0.045, 0.355, 1);
+  transform: translate(-50%, -50%);
+}
+
+.preloader.load .brand {
+  animation: brand-animation 1.6s cubic-bezier(0.645, 0.045, 0.355, 1) forwards 3.6s;
+}
+
+.preloader.load .logo {
+  opacity: 1;
+}
+.preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+.preloader.hide .logo {
+  animation: logo-out 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+.preloader.hide .brand {
+  animation: brand-out 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+
+
+html.ie-10,
+html.ie-11{
+  .preloader  .logo, .preloader  .brand {
+    opacity: 1;
+  }
+  .preloader .hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+@keyframes logo-out {
+  0% {
+    transform: translate(-50%, -65%);
+    -webkit-transform: translate(-50%, -65%);
+  }
+  100% {
+    transform: translate(-1100px, -1100px) scale(0.1);
+    -webkit-transform: translate(-1100px, -1100px) scale(0.1);
+  }
+}
+
+@keyframes brand-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes brand-out {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-1100px, -1100px) scale(0.1);
+    -webkit-transform: translate(-1100px, -1100px) scale(0.1);
+  }
+}

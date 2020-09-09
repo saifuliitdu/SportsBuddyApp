@@ -1,0 +1,283 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>aspnet-SportsBuddyApp-98961C8F-DC17-462C-8D53-AA442B15791D</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\lib\light-gallery\**" />
+    <Content Remove="wwwroot\lib\light-gallery\**" />
+    <EmbeddedResource Remove="wwwroot\lib\light-gallery\**" />
+    <None Remove="wwwroot\lib\light-gallery\**" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="bootstrap" Version="3.3.7" />
+    <PackageReference Include="jQuery" Version="3.2.1" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OAuth" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.1" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" PrivateAssets="All" />
+    <PackageReference Include="RestSharp" Version="106.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\cutoutwiz\css\style.css.map" />
+    <None Include="wwwroot\cutoutwiz\fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\cutoutwiz\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\cutoutwiz\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\cutoutwiz\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\cutoutwiz\fonts\materialdesignicons-webfont.svg" />
+    <None Include="wwwroot\cutoutwiz\fonts\materialdesignicons-webfont.woff2" />
+    <None Include="wwwroot\cutoutwiz\fonts\Thin-Regular.svg" />
+    <None Include="wwwroot\cutoutwiz\images\photoswipe-controls.svg" />
+    <None Include="wwwroot\cutoutwiz\js\core.min.js" />
+    <None Include="wwwroot\cutoutwiz\js\script.js" />
+    <None Include="wwwroot\cutoutwiz\plugin\iziModal\js\iziModal.js" />
+    <None Include="wwwroot\cutoutwiz\plugin\iziModal\js\iziModal.min.js" />
+    <None Include="wwwroot\cutoutwiz\plugin\iziModal\LICENSE" />
+    <None Include="wwwroot\cutoutwiz\plugin\iziModal\README.md" />
+    <None Include="wwwroot\cutoutwiz\plugin\Popup\jquery.toast.js" />
+    <None Include="wwwroot\cutoutwiz\sources\pug\elements\_ui-counter.pug" />
+    <None Include="wwwroot\cutoutwiz\sources\pug\elements\_ui-pagination.pug" />
+    <None Include="wwwroot\cutoutwiz\sources\pug\elements\_ui-panel.pug" />
+    <None Include="wwwroot\cutoutwiz\sources\pug\elements\_ui-progress-bar-linear.pug" />
+    <None Include="wwwroot\cutoutwiz\sources\pug\elements\_ui-table-custom.pug" />
+    <None Include="wwwroot\cutoutwiz\sources\pug\elements\_widget-list.pug" />
+    <None Include="wwwroot\cutoutwiz\sources\pug\pages\index.pug" />
+    <None Include="wwwroot\cutoutwiz\sources\pug\sections\_footer-default.pug" />
+    <None Include="wwwroot\cutoutwiz\sources\pug\sections\_header-default-with-top-panel.pug" />
+    <None Include="wwwroot\cutoutwiz\sources\pug\sections\_header-default.pug" />
+    <None Include="wwwroot\cutoutwiz\sources\pug\sections\_header-sidebar.pug" />
+    <None Include="wwwroot\cutoutwiz\sources\pug\sections\_section-font-awesome.pug" />
+    <None Include="wwwroot\cutoutwiz\sources\pug\sections\_section-glyphicons.pug" />
+    <None Include="wwwroot\cutoutwiz\sources\pug\sections\_section-material-design-icons.pug" />
+    <None Include="wwwroot\cutoutwiz\sources\pug\_config.pug" />
+    <None Include="wwwroot\cutoutwiz\sources\pug\_mixins.pug" />
+    <None Include="wwwroot\cutoutwiz\sources\pug\_navigation.pug" />
+    <None Include="wwwroot\cutoutwiz\sources\pug\_skeleton.pug" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\bootstrap.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_alerts.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_background-variant.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_border-radius.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_buttons.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_center-block.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_clearfix.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_forms.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_gradients.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_grid-framework.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_grid.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_hide-text.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_image.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_labels.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_list-group.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_nav-divider.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_nav-vertical-align.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_opacity.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_pagination.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_panels.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_progress-bar.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_reset-filter.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_reset-text.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_resize.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_responsive-visibility.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_size.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_tab-focus.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_table-row.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_text-emphasis.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_text-overflow.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\mixins\_vendor-prefixes.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_alerts.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_badges.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_breadcrumbs.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_button-groups.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_buttons.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_carousel.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_close.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_code.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_component-animations.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_dropdowns.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_forms.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_glyphicons.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_grid.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_input-groups.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_jumbotron.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_labels.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_list-group.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_media.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_mixins.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_modals.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_navbar.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_navs.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_normalize.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_pager.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_pagination.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_panels.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_popovers.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_print.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_progress-bars.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_responsive-embed.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_responsive-utilities.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_scaffolding.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_tables.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_theme.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_thumbnails.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_tooltip.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_type.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_utilities.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_variables.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\bootstrap\_wells.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\components\_breadcrumbs.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\components\_buttons.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\components\_forms.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\components\_icons.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\components\_lists.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\components\_navigation.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\components\_pagination-custom.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\components\_panel-custom.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\components\_posts.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\components\_preloader.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\components\_snackbars.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\components\_tables.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\components\_thumbnails.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\components\_tooltip.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\fonts\_font-awesome.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\fonts\_mdi.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\fonts\_thin.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\helpers\_context-styling.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\helpers\_groups.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\helpers\_offsets.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\helpers\_sections.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\helpers\_text-alignment.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\helpers\_text-styling.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\helpers\_visibility-responsive.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\mixins\_buttons.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\mixins\_flex-grid-framework.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\mixins\_functions.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\mixins\_gradients.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\mixins\_groups.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\mixins\_mixins.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\mixins\_range-spacing.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\mixins\_unit-utilities.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\mixins\_vendors.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\mixins\_visibility-utilities.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\modules\_flex-grid.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\modules\_unit-responsive.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\rd-navbar_includes\_rd-navbar-components.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\rd-navbar_includes\_rd-navbar-fixed.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\rd-navbar_includes\_rd-navbar-fullwidth.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\rd-navbar_includes\_rd-navbar-mixins.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\rd-navbar_includes\_rd-navbar-sidebar.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\rd-navbar_includes\_rd-navbar-static.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\_animate.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\_beforeafter.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\_counter.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\_isotope.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\_jquery-circle-progress.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\_owl-carousel.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\_photoswipe.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\_progress-bars.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\_rd-google-map.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\_rd-navbar.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\_rd-parallax.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\_rd-search.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\_rd-video.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\_select2.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\_swiper.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\_tabs.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\_timecircles.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\plugins\_ui-to-top.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\style.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\_includes.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\_mixins.scss" />
+    <None Include="wwwroot\cutoutwiz\sources\sass\custom-styles\_variables-custom.scss" />
+    <None Include="wwwroot\lib\dropzone-master\.gitignore" />
+    <None Include="wwwroot\lib\dropzone-master\.tagconfig" />
+    <None Include="wwwroot\lib\dropzone-master\.travis.yml" />
+    <None Include="wwwroot\lib\dropzone-master\CONTRIBUTING.md" />
+    <None Include="wwwroot\lib\dropzone-master\dist\dropzone-amd-module.js" />
+    <None Include="wwwroot\lib\dropzone-master\dist\dropzone.js" />
+    <None Include="wwwroot\lib\dropzone-master\dist\min\dropzone-amd-module.min.js" />
+    <None Include="wwwroot\lib\dropzone-master\dist\min\dropzone.min.js" />
+    <None Include="wwwroot\lib\dropzone-master\dist\readme.md" />
+    <None Include="wwwroot\lib\dropzone-master\index.js" />
+    <None Include="wwwroot\lib\dropzone-master\LICENSE" />
+    <None Include="wwwroot\lib\dropzone-master\README.md" />
+    <None Include="wwwroot\lib\iziModal\js\iziModal.js" />
+    <None Include="wwwroot\lib\iziModal\js\iziModal.min.js" />
+    <None Include="wwwroot\lib\iziModal\LICENSE" />
+    <None Include="wwwroot\lib\iziModal\README.md" />
+    <None Include="wwwroot\lib\plupload\examples\dump.php" />
+    <None Include="wwwroot\lib\plupload\examples\jquery\s3.php" />
+    <None Include="wwwroot\lib\plupload\examples\upload.php" />
+    <None Include="wwwroot\lib\plupload\js\i18n\ar.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\az.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\bg.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\bs.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\ca.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\cs.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\cy.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\da.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\de.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\el.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\en.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\es.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\et.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\fa.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\fi.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\fr.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\he.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\hr.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\hu.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\hy.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\id.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\it.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\ja.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\ka.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\kk.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\km.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\ko.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\ku_IQ.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\lt.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\lv.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\ms.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\nl.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\pl.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\pt.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\pt_BR.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\ro.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\ru.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\sk.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\sl.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\sq.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\sr.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\sv.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\th_TH.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\tr.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\uk_UA.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\vi.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\zh_CN.js" />
+    <None Include="wwwroot\lib\plupload\js\i18n\zh_TW.js" />
+    <None Include="wwwroot\lib\plupload\js\jquery.plupload.queue\jquery.plupload.queue.js" />
+    <None Include="wwwroot\lib\plupload\js\jquery.plupload.queue\jquery.plupload.queue.min.js" />
+    <None Include="wwwroot\lib\plupload\js\jquery.ui.plupload\jquery.ui.plupload.js" />
+    <None Include="wwwroot\lib\plupload\js\jquery.ui.plupload\jquery.ui.plupload.min.js" />
+    <None Include="wwwroot\lib\plupload\js\Moxie.swf" />
+    <None Include="wwwroot\lib\plupload\js\Moxie.xap" />
+    <None Include="wwwroot\lib\plupload\js\plupload.dev.js" />
+    <None Include="wwwroot\lib\plupload\js\plupload.js" />
+    <None Include="wwwroot\lib\plupload\js\plupload.min.js" />
+    <None Include="wwwroot\lib\plupload\readme.md" />
+  </ItemGroup>
+
+</Project>

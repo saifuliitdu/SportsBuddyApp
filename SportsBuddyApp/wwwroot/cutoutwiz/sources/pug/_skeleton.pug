@@ -1,0 +1,95 @@
+- var fonts = "//fonts.googleapis.com/css?family=Shadows+Into+Light%7CLibre+Franklin:200,300,400,600,700"
+- var html_class = "wide smoothscroll wow-animation"
+
+include _mixins
+include _config
+
+block variables
+
+doctype html
+
+html(lang="en" class=html_class)
+	head
+		// Site Title
+		block title
+			title Home
+
+		meta(name="format-detection" content="telephone=no")
+		meta(name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(charset='utf-8')
+
+		link(rel="icon" href="images/favicon.ico" type="image/x-icon")
+
+		// Stylesheets
+		link(rel="stylesheet" type="text/css" href=fonts)
+		link(rel="stylesheet" href="css/bootstrap.css")
+		link(rel="stylesheet" href="css/style.css")
+
+		= "\n\t\t"
+		<!--[if lt IE 10]>
+		div(style='background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;')
+			a(href="http://windows.microsoft.com/en-US/internet-explorer/")
+				img(src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.")
+		script(src="js/html5shiv.min.js")
+		= "\n\t\t"
+		<![endif]-->
+	body
+		// Page
+		// Page preloader
+		#preloader.preloader
+			| <svg class="logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 980 980" enable-background="new 0 0 980 980" xml:space="preserve"><g> <g id="Grid" stroke-width="2" opacity="0.05"><defs><linearGradient id="grid_v" x1="0%" y1="0%" x2="0%" y2="100%" gradientUnits="userSpaceOnUse"><stop offset="0%" style="stop-color:#fff;stop-opacity:0" /><stop offset="50%" style="stop-color:#fff;stop-opacity:0.7" /><stop offset="100%" style="stop-color:#fff;stop-opacity:0" /></linearGradient><linearGradient id="grid_v_40" x1="0%" y1="0%" x2="0%" y2="100%" gradientUnits="userSpaceOnUse"><stop offset="0%" style="stop-color:#fff;stop-opacity:0" /><stop offset="50%" style="stop-color:#fff;stop-opacity:0.4" /><stop offset="100%" style="stop-color:#fff;stop-opacity:0" /></linearGradient><linearGradient id="grid_v_20" x1="0%" y1="0%" x2="0%" y2="100%" gradientUnits="userSpaceOnUse"><stop offset="0%" style="stop-color:#fff;stop-opacity:0" /><stop offset="50%" style="stop-color:#fff;stop-opacity:0.2" /><stop offset="100%" style="stop-color:#fff;stop-opacity:0" /></linearGradient><linearGradient id="grid_h" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse"><stop offset="0%" style="stop-color:#fff;stop-opacity:0" /><stop offset="50%" style="stop-color:#fff;stop-opacity:0.7" /><stop offset="100%" style="stop-color:#fff;stop-opacity:0" /></linearGradient><linearGradient id="grid_h_40" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse"><stop offset="0%" style="stop-color:#fff;stop-opacity:0" /><stop offset="50%" style="stop-color:#fff;stop-opacity:0.4" /><stop offset="100%" style="stop-color:#fff;stop-opacity:0" /></linearGradient><linearGradient id="grid_h_20" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse"><stop offset="0%" style="stop-color:#fff;stop-opacity:0" /><stop offset="50%" style="stop-color:#fff;stop-opacity:0.2" /><stop offset="100%" style="stop-color:#fff;stop-opacity:0" /></linearGradient></defs><g id="Vertical" stroke="url(#grid_v)"><line x1="242.2" y1="0" x2="242.2" y2="980"/><line x1="738" y1="0.1" x2="738" y2="980.1"/><line x1="826.6" stroke="url(#grid_v_40)" y1="0.4" x2="826.6" y2="980.4"/><line x1="909.1" stroke="url(#grid_v_20)" y1="0.4" x2="909.1" y2="980.4"/><line x1="159.1" stroke="url(#grid_v_40)" y1="0.4" x2="159.1" y2="980.4"/><line x1="75.1" stroke="url(#grid_v_20)" y1="0.4" x2="75.1" y2="980.4"/><line x1="490" y1="0.4" x2="490" y2="980.4"/><line x1="406.8" y1="0.4" x2="406.8" y2="980.4"/><line x1="329.7" y1="0.1" x2="329.7" y2="980.1"/><line x1="573.8" y1="0" x2="573.8" y2="980"/><line x1="650.6" y1="0.1" x2="650.6" y2="980.1"/></g><g id="Horizontal" stroke="url(#grid_h)"><line x1="981.9" stroke="url(#grid_h_20)" y1="144.4" x2="1.9" y2="144.4"/><line x1="982.1" stroke="url(#grid_h_40)" y1="221.2" x2="2.1" y2="221.2"/><line x1="982.1" y1="298" x2="2.1" y2="298"/><line x1="981.9" y1="374.8" x2="1.9" y2="374.8"/><line x1="981.9" y1="451.6" x2="1.9" y2="451.6"/><line x1="982.3" y1="528.4" x2="2.3" y2="528.4"/><line x1="982.2" y1="605.2" x2="2.2" y2="605.2"/><line x1="982.2" y1="682" x2="2.2" y2="682"/><line x1="982.3" stroke="url(#grid_h_40)" y1="758.8" x2="2.3" y2="758.8"/><line x1="981.9" stroke="url(#grid_h_20)" y1="835.6" x2="1.9" y2="835.6"/></g></g><g id="Logo"> <polygon fill="#2fd3b0" points="242.2,298 376.3,345.1 406.7,318.3 573.8,318.5 604.1,345.1 738.2,298 651.1,378.7 490.6,428.1 329.3,378.7 414.9,546.5 566.1,546.5 651.2,378 738.2,298 650.7,562.3 490.3,681.7 329.9,563"/> <animate attributeName="opacity" begin="0s" dur="0.0000001s" values="0; 0" repeatCount="1" fill="freeze"/> <animate			attributeName="opacity"			begin="2.4s"			dur="0.7s"			values="0; 1"			repeatCount="1"			fill="freeze"	/></g><g id="Logo_Stroke" stroke="#fff" stroke-width="2" fill="transparent" opacity="0.5"><polygon points="329.3,378.7 372.3,345.1 242.2,298 " stroke-dasharray="316" stroke-dashoffset="316"><animate attributeName="stroke-dashoffset" begin="0s" dur="2s" values="316; 0" repeatCount="1" fill="freeze" calcMode="spline" keySplines="0.645 0.045 0.355 1" keyTimes="0;1"/></polygon><polygon points="330.1,378.8 329.9,563 242.2,298  " stroke-dasharray="582" stroke-dashoffset="582"><animate attributeName="stroke-dashoffset" begin="0s" dur="2s" values="582; 0" repeatCount="1" fill="freeze" calcMode="spline" keySplines="0.645 0.045 0.355 1" keyTimes="0;1"/></polygon><polygon points="651.1,378.7 738.2,298 604.1,342.1 "  stroke-dasharray="316" stroke-dashoffset="316"><animate attributeName="stroke-dashoffset" begin="0s" dur="2s" values="316; 0" repeatCount="1" fill="freeze" calcMode="spline" keySplines="0.645 0.045 0.355 1" keyTimes="0;1"/></polygon><polygon points="650.3,378.8 650.5,563 738.2,298" stroke-dasharray="582" stroke-dashoffset="582"><animate attributeName="stroke-dashoffset" begin="0s" dur="2s" values="582; 0" repeatCount="1" fill="freeze" calcMode="spline" keySplines="0.645 0.045 0.355 1" keyTimes="0;1"/></polygon><polygon points="651.2,378.1 670.6,360.3 650.7,561.7   "  stroke-dasharray="412" stroke-dashoffset="412"><animate attributeName="stroke-dashoffset" begin="0s" dur="2s" values="412; 0" repeatCount="1" fill="freeze" calcMode="spline" keySplines="0.645 0.045 0.355 1" keyTimes="0;1"/></polygon><polygon points="651,378.2 670.6,360.3 606.9,344.1 " stroke-dasharray="144" stroke-dashoffset="144"><animate attributeName="stroke-dashoffset" begin="0s" dur="2s" values="144; 0" repeatCount="1" fill="freeze" calcMode="spline" keySplines="0.645 0.045 0.355 1" keyTimes="0;1"/></polygon><polygon points="329.7,378.1 310.4,360.3 330.2,561.7" stroke-dasharray="412" stroke-dashoffset="412"><animate attributeName="stroke-dashoffset" begin="0s" dur="2s" values="412; 0" repeatCount="1" fill="freeze" calcMode="spline" keySplines="0.645 0.045 0.355 1" keyTimes="0;1"/></polygon><polygon points="330,378.2 310.4,360.3 374.1,344.1" stroke-dasharray="146" stroke-dashoffset="146"><animate attributeName="stroke-dashoffset" begin="0s" dur="2s" values="146; 0" repeatCount="1" fill="freeze" calcMode="spline" keySplines="0.645 0.045 0.355 1" keyTimes="0;1"/></polygon><polygon points="329.5,562.4 490.3,681.7 414.6,546.5"  stroke-dasharray="444" stroke-dashoffset="444"><animate attributeName="stroke-dashoffset" begin="0.75s" dur="2s" values="444; 0" repeatCount="1" fill="freeze" calcMode="spline" keySplines="0.645 0.045 0.355 1" keyTimes="0;1"/></polygon><polygon points="650.7,562.3 490.2,681.7 565.9,546.5" stroke-dasharray="444" stroke-dashoffset="444"><animate attributeName="stroke-dashoffset" begin="0.75s" dur="2s" values="444; 0" repeatCount="1" fill="freeze" calcMode="spline" keySplines="0.645 0.045 0.355 1" keyTimes="0;1"/></polygon><polygon points="490,427.8 490,428.6 490.3,428.2 490.6,428.6 490.6,427.8 573.8,318.5 406.7,318.5 " stroke-dasharray="444" stroke-dashoffset="444"><animate attributeName="stroke-dashoffset" begin="0.85s" dur="2s" values="444; 0" repeatCount="1" fill="freeze" calcMode="spline" keySplines="0.645 0.045 0.355 1" keyTimes="0;1"/></polygon><polygon points="490.6,428.1 406.7,318.3 329.4,378.4"  stroke-dasharray="405" stroke-dashoffset="405"><animate attributeName="stroke-dashoffset" begin="0.85s" dur="2s" values="405; 0" repeatCount="1" fill="freeze" calcMode="spline" keySplines="0.645 0.045 0.355 1" keyTimes="0;1"/></polygon><polygon points="329.3,378 329.8,563 414.9,546.5" stroke-dasharray="460" stroke-dashoffset="460"><animate attributeName="stroke-dashoffset" begin="0s" dur="2s" values="460; 0" repeatCount="1" fill="freeze" calcMode="spline" keySplines="0.645 0.045 0.355 1" keyTimes="0;1"/></polygon><polygon points="490.6,428.5 490.6,427.6 490.3,428.1 490,427.6 490,428.5 414.5,546.6 566.1,546.6" stroke-dasharray="435" stroke-dashoffset="435"><animate attributeName="stroke-dashoffset" begin="0.85s" dur="2s" values="435; 0" repeatCount="1" fill="freeze" calcMode="spline" keySplines="0.645 0.045 0.355 1" keyTimes="0;1"/></polygon><polygon points=" 490,428.5 490,427.6 490.3,428.1 490.6,427.6 490.6,428.5 566.1,546.6  414.5,546.6" stroke-dasharray="435" stroke-dashoffset="435"><animate attributeName="stroke-dashoffset" begin="0.85s" dur="2s" values="435; 0" repeatCount="1" fill="freeze" calcMode="spline" keySplines="0.645 0.045 0.355 1" keyTimes="0;1"/></polygon><polygon points="490,428.1 573.8,318.3 651.1,378.4" stroke-dasharray="435" stroke-dashoffset="435"><animate attributeName="stroke-dashoffset" begin="0.85s" dur="2s" values="435; 0" repeatCount="1" fill="freeze" calcMode="spline" keySplines="0.645 0.045 0.355 1" keyTimes="0;1"/></polygon><polygon points="651.2,378 650.7,562.4 565.6,546.5" stroke-dasharray="458" stroke-dashoffset="458"><animate attributeName="stroke-dashoffset" begin="0s" dur="2s" values="458; 0" repeatCount="1" fill="freeze" calcMode="spline" keySplines="0.645 0.045 0.355 1" keyTimes="0;1"/></polygon><polygon points="651.5,378.1 640.1,399.4 490.1,428.1" stroke-dasharray="345" stroke-dashoffset="345"><animate attributeName="stroke-dashoffset" begin="0s" dur="2s" values="345; 0" repeatCount="1" fill="freeze" calcMode="spline" keySplines="0.645 0.045 0.355 1" keyTimes="0;1"/></polygon><polygon points="329.2,378.4 340.5,399.6 490.6,428.3"  stroke-dasharray="345" stroke-dashoffset="345"><animate attributeName="stroke-dashoffset" begin="0s" dur="2s" values="345; 0" repeatCount="1" fill="freeze" calcMode="spline" keySplines="0.645 0.045 0.355 1" keyTimes="0;1"/></polygon><animate attributeName="opacity" begin="2.4s" dur="0.7s" values="0.5; 0" repeatCount="1" fill="freeze"/></g></g></svg>
+			h1.brand Monstroid
+					sup 2
+			| <!--[if lt IE 10]>
+			| </div>
+			| <script>
+			| window.addEventListener("load", function () {
+			| 	setTimeout(function () {
+			| 		var o = document.getElementById("preloader");
+			| 		o.parentNode.removeChild(o);
+			| }, 2000)
+			| });
+			| </script>
+			| <![endif]-->
+
+		div.text-center.page(class=pageClass)
+			block page
+
+		// Global Mailform Output
+		#form-output-global.snackbars
+
+		// PhotoSwipe Gallery
+		.pswp(tabindex="-1" role="dialog" aria-hidden="true")
+			.pswp__bg
+			.pswp__scroll-wrap
+				.pswp__container
+					.pswp__item
+					.pswp__item
+					.pswp__item
+				.pswp__ui.pswp__ui--hidden
+					.pswp__top-bar
+						.pswp__counter
+
+						button.pswp__button.pswp__button--close(title="Close (Esc)")
+						button.pswp__button.pswp__button--share(title="Share")
+						button.pswp__button.pswp__button--fs(title="Toggle fullscreen")
+						button.pswp__button.pswp__button--zoom(title="Zoom in/out")
+						.pswp__preloader
+							.pswp__preloader__icn
+								.pswp__preloader__cut
+									.pswp__preloader__donut
+					.pswp__share-modal.pswp__share-modal--hidden.pswp__single-tap
+						.pswp__share-tooltip
+
+					button.pswp__button.pswp__button--arrow--left(title="Previous (arrow left)")
+
+					button.pswp__button.pswp__button--arrow--right(title="Next (arrow right)")
+					.pswp__caption
+						.pswp__caption__cent
+
+		// Javascript
+		script(src="js/core.min.js")
+		script(src="js/script.js")
+
+		block coder

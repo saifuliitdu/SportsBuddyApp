@@ -1,0 +1,102 @@
+﻿@using SportsBuddyApp.Models.ViewModel;
+@model DashboardViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int count = 0;
+    int count2 = 0;
+    int count3 = 0;
+}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Dashboard
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-4">
+            <div class="panel-heading">
+                Top Activity
+            </div>
+            <table class="table table-hover table-responsive table-condensed table-striped">
+                <thead>
+                    <tr>
+                        <td>SL</td>
+                        <td>Name</td>
+                        <td>Ratings</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var data in Model.TopFiveActivities)
+                    {
+                        count++;
+                        <tr>
+                            <td>
+                                @count
+                            </td>
+                            <td>@data.Activity.ActivityName</td>
+                            <td>@data.Rating</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel-heading">
+                Top Region
+            </div>
+            <table class="table table-hover table-responsive table-condensed table-striped">
+                <thead>
+                    <tr>
+                        <td>SL</td>
+                        <td>Name</td>
+                        <td>User Count</td>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                    @foreach (var data in Model.TopFiveRegions)
+                    {
+                        count2++;
+                        <tr>
+                            <td>
+                                @count2
+                            </td>
+                            <td>@data.Region.RegionName</td>
+                            <td>@data.UserCount</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel-heading">
+                Top Users
+            </div>
+            <table class="table table-hover table-responsive table-condensed table-striped">
+                <thead>
+                    <tr>
+                        <td>SL</td>
+                        <td>Age Group</td>
+                        <td>Count</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    @foreach (var data in Model.TopUserGroups)
+                    {
+                        count3++;
+                        <tr>
+                            <td>
+                                @count3
+                            </td>
+                            <td>@data.AgeGroup</td>
+                            <td>@data.Count</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+      
+    </div>
+</div>
+

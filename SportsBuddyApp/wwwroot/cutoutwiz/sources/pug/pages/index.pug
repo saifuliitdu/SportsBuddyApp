@@ -1,0 +1,951 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-pagination
+
+block variables
+	- var activeIndex = 1
+	- var pageClass = ''
+	- var buyHref = '//www.templatemonster.com/website-templates/monstroid2.html'
+	- var builerHref = '//ld-wp2.template-help.com/novi-builder/Monstroid2'
+	- var indexHref = '../62267-default'
+
+block title
+	title Home
+
+block page
+	// Page Header
+	include ../sections/_header-default
+
+	// Swiper
+	section#home.section.swiper-container.swiper-slider(data-loop='false' data-simulate-touch="false")
+		.swiper-wrapper
+			.swiper-slide-video.swiper-slide(data-slide-bg='images/home-slider-01.jpg' )
+				.swiper-slide-caption.text-md-left
+					.shell.shell-wide
+						.range.range-md-justify.range-center
+							.cell-lg-4.cell-md-5.cell-lg-preffix-1
+								.oveflow-wrapper
+									h5.big.text-primary(data-caption-animate='fadeInUp' data-caption-delay='400') Brand New & Improved!
+								.oveflow-wrapper
+									h1(data-caption-animate='fadeInUp' data-caption-delay='500') Monstroid²
+								p(data-caption-animate='fadeInUp' data-caption-delay='600') Monstroid² boasts clean and crispy design, bulletproof layout consistence and intuitive navigation.
+								ul.group.text-xs-nowrap
+									li
+										a(href=indexHref data-caption-animate='fadeInUp' data-caption-delay='500').button.button-white Live demo
+									li
+										a(href=builerHref target='_blank' data-caption-animate='fadeInUp' data-caption-delay='500').button.button-primary Try Builder
+
+
+							.cell-sm-9.cell-lg-7.cell-md-6.video-caption-wrapper
+								.video-caption
+									img(src="images/home-slider-04.png", alt="").video-caption-overlay
+									// RD Video
+									.rd-video.play-on-scroll(data-rd-video-path="video/monstroid"  class="rd-video-player")
+										.rd-video-wrap
+											.rd-video-preloader
+											video
+											.rd-video-controls
+												// Play\Pause button
+												a.rd-video-play-pause.mdi.mdi-play.icon.icon-lg(href='#')
+												// Progress bar
+												.rd-video-progress-bar
+													.current(style='width: 0%;')
+												.rd-video-time
+													// currentTime
+													span.rd-video-current-time 00:00
+													|  -
+													// Track duration
+													span.rd-video-duration 02:49
+												.rd-video-volume-wrap
+													// Volume button
+													a.rd-video-volume.mdi.mdi-volume-high.icon.icon-sm(href='#')
+													.rd-video-volume-bar-wrap
+														// Volume bar
+														.rd-video-volume-bar.rd-video-volume-bar-vertical
+
+
+			.swiper-slide(data-slide-bg='images/home-slider-02.jpg')
+				.swiper-slide-caption
+					.shell.shell-wide
+						h2(data-caption-animate='fadeInUp' data-caption-delay='300') Create and Customize Your Own Website
+						h3(data-caption-animate='fadeInUp' data-caption-delay='400') It has never been easier!
+						ul.group.text-xs-nowrap
+							li
+								a(href=indexHref data-caption-animate='fadeInUp' data-caption-delay='500').button.button-white Live demo
+							li
+								a(target='_blank' href=builerHref data-caption-animate='fadeInUp' data-caption-delay='500').button.button-primary Try Builder
+
+			.swiper-slide(data-slide-bg='images/home-slider-03.jpg')
+				.swiper-slide-caption
+					.shell.shell-wide
+						h2(data-caption-animate='fadeInUp' data-caption-delay='300') A Variety of Available Customization Options
+						ul.group.text-xs-nowrap
+							li
+								a(href=indexHref data-caption-animate='fadeInUp' data-caption-delay='500').button.button-white Live demo
+							li
+								a(target='_blank' href=builerHref data-caption-animate='fadeInUp' data-caption-delay='500').button.button-primary Try Builder
+
+		// Swiper Navigation
+		.swiper-button-prev.mdi.mdi-chevron-left
+		.swiper-button-next.mdi.mdi-chevron-right
+
+	section.section.context-dark.bg-primary.section-cta
+		.shell.shell-wide
+			.range.range-middle
+				.cell-lg-9.cell-xl-8.cell-xl-preffix-1.text-lg-left
+					h3
+						span.text-bold='Monstroid² '
+						| is the perfect start of your future website
+					h5 We took into consideration all of the latest innovative user-experience researches and best practices.
+				.cell-lg-3.text-center
+					a(target='_black' href=buyHref).button.button-white-style-1 Get it now
+
+	section.section-80.section-md-90.section-lg-140.bg-gray-lighter#features
+		.shell
+			// Text Rotator
+			h2='Features are'
+				span.text-rotator(data-text-class='text-secondary font-accent', data-enable='1200', data-words='...flexible,...ready to use,...customizable', data-rotate-interval='3000', data-rotate-animation='fadeInUp, fadeOutUp')
+					span.rotate-area
+			.range.range-60.range-center
+				.cell-md-3.cell-sm-5.cell-xs-6
+					span.icon.icon-primary-secondary.icon-lg.thin-icon-layers
+					// CountTo
+					.counter-postfix.counter(data-speed='2000') 400
+					h5.counter-title HTML Pages
+				.cell-md-3.cell-sm-5.cell-xs-6
+					span.icon.icon-primary-secondary.icon-lg.thin-icon-dublicate
+					// CountTo
+					.counter-svg
+						svg(version='1.1', x='0px', y='0px', width='44', height='37', viewbox='0 0 81.196 40.831', style='enable-background:new 0 0 81.196 40.831;', xml:space='preserve')
+							g
+								g
+									path(style='clip-path:url(#SVGID_2_);', d='M61.521,0c-5.378,0-10.435,2.094-14.174,5.81l-6.516,6.265l-6.428-6.171\
+                  C30.6,2.094,25.543,0,20.165,0C14.763,0,9.706,2.094,5.903,5.903C2.094,9.706,0,14.763,0,20.165C0,25.543,2.094,30.6,5.903,34.403\
+                  c3.803,3.809,8.86,5.903,14.262,5.903c5.378,0,10.435-2.071,14.174-5.81l6.492-6.241l6.428,6.148\
+                  c3.803,3.809,8.86,5.903,14.262,5.903c5.378,0,10.436-2.071,14.239-5.903c3.809-3.803,5.903-8.86,5.903-14.239\
+                  c0-5.401-2.094-10.459-5.903-14.262C71.956,2.094,66.899,0,61.521,0L61.521,0z M26.155,26.155c-3.208,3.214-8.79,3.214-12.004,0\
+                  c-1.598-1.616-2.485-3.733-2.485-5.991c0-2.281,0.886-4.398,2.508-6.014c1.592-1.598,3.71-2.485,5.991-2.485\
+                  c2.257,0,4.398,0.887,6.084,2.572l6.177,5.926L26.155,26.155z M67.512,26.155c-3.214,3.214-8.703,3.284-12.098-0.088l-6.154-5.926\
+                  l6.247-5.991c3.208-3.214,8.791-3.214,12.004,0c1.598,1.592,2.485,3.733,2.485,5.991C69.997,22.422,69.11,24.54,67.512,26.155\
+                  L67.512,26.155z')
+
+
+					h5.counter-title Unlimited Layouts
+				.cell-md-3.cell-sm-5.cell-xs-6
+					span.icon.icon-primary-secondary.icon-lg.thin-icon-document-edit
+					// CountTo
+					.counter-postfix.counter(data-speed='3000') 700
+					h5.counter-title Visual Editor Presets
+				.cell-md-3.cell-sm-5.cell-xs-6
+					span.icon.icon-primary-secondary.icon-lg.thin-icon-thumb-up
+					// CountTo
+					.counter-postfix.counter(data-speed='2000') 10
+					h5.counter-title Years of Experience
+
+
+	section.section-80.section-md-90.section-lg-140.bg-white#niche
+		.shell.shell-wide.shell-spacing-30
+			h2 Niche Templates
+			p.offset-top-24.text-gray
+				| Monstroid² offers you lots of customizable niche layouts, with which you can build your website.
+			.range.range-50.range-md-90
+				.cell-lg-3.cell-md-4.cell-sm-6.wow.fadeInUp
+					a.thumbnail-type-1( href=indexHref)
+						figure
+							img(src='images/home-00.jpg', width='420', height='300', alt='')
+						.caption
+							.caption-inner
+								.caption-title Monstroid²
+								p A perfect choice for your needs
+				.cell-lg-3.cell-md-4.cell-sm-6.wow.fadeInUp
+					a.thumbnail-type-1( href='../62268-modern-hotel/index.html')
+						figure
+							img(src='images/home-01.jpg', width='420', height='300', alt='')
+						.caption
+							.caption-inner
+								.caption-title Modern hotel
+								p A perfect choice for your needs
+				.cell-lg-3.cell-md-4.cell-sm-6.wow.fadeInUp
+					a.thumbnail-type-1( href='../62269-construction/index.html')
+						figure
+							img(src='images/home-02.jpg', width='420', height='300', alt='')
+						.caption
+							.caption-inner
+								.caption-title Construction
+								p A perfect choice for your needs
+				.cell-lg-3.cell-md-4.cell-sm-6.wow.fadeInUp
+					a.thumbnail-type-1( href='../62270-corporate/index.html')
+						figure
+							img(src='images/home-03.jpg', width='420', height='300', alt='')
+						.caption
+							.caption-inner
+								.caption-title CORP
+								p A perfect choice for your needs
+				.cell-lg-3.cell-md-4.cell-sm-6.wow.fadeInUp
+					a.thumbnail-type-1( href='../62271-fitness/index.html')
+						figure
+							img(src='images/home-04.jpg', width='420', height='300', alt='')
+						.caption
+							.caption-inner
+								.caption-title Ironmass
+								p A perfect choice for your needs
+				.cell-lg-3.cell-md-4.cell-sm-6.wow.fadeInUp
+					a.thumbnail-type-1( href='../62273-fashion-blog/index.html')
+						figure
+							img(src='images/home-05.jpg', width='420', height='300', alt='')
+						.caption
+							.caption-inner
+								.caption-title Fashion
+								p A perfect choice for your needs
+				.cell-lg-3.cell-md-4.cell-sm-6.wow.fadeInUp
+					a.thumbnail-type-1( href='../62275-loan-offer/index.html')
+						figure
+							img(src='images/home-06.jpg', width='420', height='300', alt='')
+						.caption
+							.caption-inner
+								.caption-title LoanOffer
+								p A perfect choice for your needs
+				.cell-lg-3.cell-md-4.cell-sm-6.wow.fadeInUp
+					a.thumbnail-type-1( href='../62272-furni/index.html')
+						figure
+							img(src='images/home-07.jpg', width='420', height='300', alt='')
+						.caption
+							.caption-inner
+								.caption-title Furni
+								p A perfect choice for your needs
+				.cell-lg-3.cell-md-4.cell-sm-6.wow.fadeInUp
+					a.thumbnail-type-1( href='../62274-lawyer/index.html')
+						figure
+							img(src='images/home-08.jpg', width='420', height='300', alt='')
+						.caption
+							.caption-inner
+								.caption-title Lawyer
+								p A perfect choice for your needs
+				.cell-lg-3.cell-md-4.cell-sm-6.wow.fadeInUp
+					a.thumbnail-type-1( href='../62276-resto/index.html')
+						figure
+							img(src='images/home-09.jpg', width='420', height='300', alt='')
+						.caption
+							.caption-inner
+								.caption-title Resto
+								p A perfect choice for your needs
+				.cell-lg-3.cell-md-4.cell-sm-6.wow.fadeInUp
+					figure
+						img(src='images/home-10.jpg', width='420', height='300', alt='')
+				.cell-lg-3.cell-md-4.cell-sm-6.wow.fadeInUp
+					figure
+						img(src='images/home-10.1.jpg', width='420', height='300', alt='')
+
+	section.section-80.section-md-90.section-lg-140.bg-gray-lighter
+		.shell.shell-wide.shell-spacing-30
+			h2 Pre-made layouts
+			p.offset-top-24.text-gray Use these pre-made layouts with any page of Monstroid².
+			.range.range-50.range-md-90
+				.cell-lg-3.cell-md-4.cell-sm-6
+					a.thumbnail-type-2(href=indexHref + '/index.html')
+						figure
+							img(src='images/monstr-home-1.jpg', width='350', height='350', alt='')
+						.caption
+							.caption-title home default
+				.cell-lg-3.cell-md-4.cell-sm-6
+					a.thumbnail-type-2(href=indexHref + '/home-business.html')
+						figure
+							img(src='images/monstr-home-2.jpg', width='350', height='350', alt='')
+						.caption
+							.caption-title home business
+				.cell-lg-3.cell-md-4.cell-sm-6
+					a.thumbnail-type-2(href=indexHref + '/home-commercial.html')
+						figure
+							img(src='images/monstr-home-3.jpg', width='350', height='350', alt='')
+						.caption
+							.caption-title home commercial
+				.cell-lg-3.cell-md-4.cell-sm-6
+					a.thumbnail-type-2(href=indexHref + '/home-creative.html')
+						figure
+							img(src='images/monstr-home-4.jpg', width='350', height='350', alt='')
+						.caption
+							.caption-title home creative
+				.cell-lg-3.cell-md-4.cell-sm-6
+					a.thumbnail-type-2(href=indexHref + '/home-minimal.html')
+						figure
+							img(src='images/monstr-home-5.jpg', width='350', height='350', alt='')
+						.caption
+							.caption-title home minimal
+				.cell-lg-3.cell-md-4.cell-sm-6
+					a.thumbnail-type-2(href=indexHref + '/home-modern.html')
+						figure
+							img(src='images/monstr-home-6.jpg', width='350', height='350', alt='')
+						.caption
+							.caption-title home modern
+				.cell-lg-3.cell-md-4.cell-sm-6
+					a.thumbnail-type-2(href=indexHref + '/home-personal.html')
+						figure
+							img(src='images/monstr-home-7.jpg', width='350', height='350', alt='')
+						.caption
+							.caption-title home personal
+				.cell-lg-3.cell-md-4.cell-sm-6
+					a.thumbnail-type-2(href=indexHref + '/header-default.html')
+						figure
+							img(src='images/monstr-home-1-header.jpg', width='350', height='350', alt='')
+						.caption
+							.caption-title header default
+
+				#goal.cell-md-12.veil(data-custom-toggle-goal='')
+					.range.range-50.range-md-90
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href=indexHref + '/header-default-dark.html')
+								figure
+									img(src='images/monstr-home-2-header.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title header default-dark
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href=indexHref + '/header-sidebar-inverse.html')
+								figure
+									img(src='images/monstr-home-8-header.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title header sidebar inverse
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href=indexHref + '/header-creative.html')
+								figure
+									img(src='images/monstr-home-4-header.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title header creative
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href=indexHref + '/header-corporate.html')
+								figure
+									img(src='images/monstr-home-5-header.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title header corporate
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href=indexHref + '/header-transparent.html')
+								figure
+									img(src='images/monstr-home-6-header.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title header transparent
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href=indexHref + '/header-sidebar.html')
+								figure
+									img(src='images/monstr-home-7-header.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title header sidebar
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href=indexHref + '/header-modern.html')
+								figure
+									img(src='images/monstr-home-3-header.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title header modern
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href=indexHref + '/footer-corporate.html')
+								figure
+									img(src='images/monstr-home-1-footer.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title home footer 1
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href=indexHref + '/footer-minimal.html')
+								figure
+									img(src='images/monstr-home-2-footer.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title home footer 2
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href=indexHref + '/footer-modern.html')
+								figure
+									img(src='images/monstr-home-3-footer.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title home footer 3
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62268-modern-hotel/header-default.html')
+								figure
+									img(src='images/modern-header-1.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title modern header 1
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62268-modern-hotel/header-corporate.html')
+								figure
+									img(src='images/modern-header-2.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title modern header 2
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62268-modern-hotel/header-creative.html')
+								figure
+									img(src='images/modern-header-3.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title modern header 3
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62268-modern-hotel/footer-corporate.html')
+								figure
+									img(src='images/modern-footer-1.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title modern footer 1
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62268-modern-hotel/footer-minimal.html')
+								figure
+									img(src='images/modern-footer-2.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title modern footer 2
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62268-modern-hotel/footer-modern.html')
+								figure
+									img(src='images/modern-footer-3.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title modern footer 3
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62269-construction/header-default.html')
+								figure
+									img(src='images/construction-header-1.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title construction header 1
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62269-construction/header-transparent.html')
+								figure
+									img(src='images/construction-header-2.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title construction header 2
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62269-construction/header-minimal.html')
+								figure
+									img(src='images/construction-header-3.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title construction header 3
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62269-construction/footer-default.html')
+								figure
+									img(src='images/construction-footer-1.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title construction footer 1
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62269-construction/footer-minimal.html')
+								figure
+									img(src='images/construction-footer-2.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title construction footer 2
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62269-construction/footer-modern.html')
+								figure
+									img(src='images/construction-footer-3.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title construction footer 3
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62270-corporate/index.html')
+								figure
+									img(src='images/corporate-header-1.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title corporate header 1
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62270-corporate/header-minimal.html')
+								figure
+									img(src='images/corporate-header-2.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title corporate header 2
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62270-corporate/header-personal.html')
+								figure
+									img(src='images/corporate-header-3.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title corporate header 3
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62270-corporate/footer-corporate.html')
+								figure
+									img(src='images/corporate-footer-1.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title corporate footer 1
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62270-corporate/footer-minimal.html')
+								figure
+									img(src='images/corporate-footer-2.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title corporate footer 2
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62270-corporate/footer-modern.html')
+								figure
+									img(src='images/corporate-footer-3.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title corporate footer 3
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62271-fitness/header-default.html')
+								figure
+									img(src='images/ironmass-header-1.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title ironmass header 1
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62271-fitness/header-search.html')
+								figure
+									img(src='images/ironmass-header-2.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title ironmass header 2
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62271-fitness/header-modern.html')
+								figure
+									img(src='images/ironmass-header-3.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title ironmass header 3
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62271-fitness/footer-corporate.html')
+								figure
+									img(src='images/ironmass-footer-1.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title ironmass footer 1
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62271-fitness/footer-minimal.html')
+								figure
+									img(src='images/ironmass-footer-2.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title ironmass footer 2
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62271-fitness/footer-modern.html')
+								figure
+									img(src='images/ironmass-footer-3.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title ironmass footer 3
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62272-furni/header-default.html')
+								figure
+									img(src='images/furni-header-1.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title furni header 1
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62272-furni/header-transparent.html')
+								figure
+									img(src='images/furni-header-2.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title furni header 2
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62272-furni/header-creative.html')
+								figure
+									img(src='images/furni-header-3.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title furni header 3
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62272-furni/footer-corporate.html')
+								figure
+									img(src='images/furni-footer-1.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title furni footer 1
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62272-furni/footer-minimal.html')
+								figure
+									img(src='images/furni-footer-2.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title furni footer 2
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62272-furni/footer-modern.html')
+								figure
+									img(src='images/furni-footer-3.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title furni footer 3
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62273-fashion-blog/header-default.html')
+								figure
+									img(src='images/fashion-header-1.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title fashion header 1
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62273-fashion-blog/header-creative.html')
+								figure
+									img(src='images/fashion-header-2.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title fashion header 2
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62273-fashion-blog/header-modern.html')
+								figure
+									img(src='images/fashion-header-3.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title fashion header 3
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62273-fashion-blog/header-sidebar.html')
+								figure
+									img(src='images/fashion-header-4.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title fashion header 4
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62273-fashion-blog/header-sidebar-inverse.html')
+								figure
+									img(src='images/fashion-header-5.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title fashion header 5
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62273-fashion-blog/footer-corporate.html')
+								figure
+									img(src='images/fashion-footer-1.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title fashion footer 1
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62273-fashion-blog/footer-minimal.html')
+								figure
+									img(src='images/fashion-footer-2.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title fashion footer 2
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62273-fashion-blog/footer-modern.html')
+								figure
+									img(src='images/fashion-footer-3.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title fashion footer 3
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62274-lawyer/header-default.html')
+								figure
+									img(src='images/lawyer-header-1.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title lawyer header 1
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62274-lawyer/header-modern.html')
+								figure
+									img(src='images/lawyer-header-2.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title lawyer header 2
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62274-lawyer/header-minimal.html')
+								figure
+									img(src='images/lawyer-header-3.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title lawyer header 3
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62274-lawyer/footer-corporate.html')
+								figure
+									img(src='images/lawyer-footer-1.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title lawyer footer 1
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62274-lawyer/footer-corporate-light.html')
+								figure
+									img(src='images/lawyer-footer-2.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title lawyer footer 2
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62274-lawyer/footer-minimal.html')
+								figure
+									img(src='images/lawyer-footer-3.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title lawyer footer 3
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62275-loan-offer/header-default.html')
+								figure
+									img(src='images/loanoffer-header-1.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title loanoffer header 1
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62275-loan-offer/header-transparent.html')
+								figure
+									img(src='images/loanoffer-header-2.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title loanoffer header 2
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62275-loan-offer/header-modern.html')
+								figure
+									img(src='images/loanoffer-header-3.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title loanoffer header 3
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62275-loan-offer/footer-corporate.html')
+								figure
+									img(src='images/loanoffer-footer-1.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title loanoffer footer 1
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62275-loan-offer/footer-minimal.html')
+								figure
+									img(src='images/loanoffer-footer-2.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title loanoffer footer 2
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62275-loan-offer/footer-modern.html')
+								figure
+									img(src='images/loanoffer-footer-3.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title loanoffer footer 3
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62276-resto/header-default.html')
+								figure
+									img(src='images/resto-header-1.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title resto header 1
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62276-resto/header-transparent.html')
+								figure
+									img(src='images/resto-header-2.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title resto header 2
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62276-resto/header-creative.html')
+								figure
+									img(src='images/resto-header-3.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title resto header 3
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62276-resto/footer-corporate.html')
+								figure
+									img(src='images/resto-footer-1.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title resto footer 1
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62276-resto/footer-minimal.html')
+								figure
+									img(src='images/resto-footer-2.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title resto footer 2
+						.cell-lg-3.cell-md-4.cell-sm-6
+							a.thumbnail-type-2(href='../62276-resto/footer-modern.html')
+								figure
+									img(src='images/resto-footer-3.jpg', width='350', height='350', alt='')
+								.caption
+									.caption-title resto footer 3
+				#goal-2.cell-md-12.text-center.offset-top-40
+					button.button.button-primary(data-custom-toggle='#goal, #goal-2', data-custom-toggle-disable-on-blur='true') View more
+
+	section.section.context-dark.bg-primary.section-cta
+		.shell.shell-wide
+			.range.range-middle
+				.cell-lg-9.cell-xl-8.cell-xl-preffix-1.text-lg-left
+					h3
+						span.text-bold='Monstroid² '
+						| is a flexible solution with lots of advantages
+					h5 Our template offers you  a variety of elements to be combined.
+				.cell-lg-3.text-center
+					a(target='_black' href=buyHref).button.button-white-style-1 Get it now
+
+	// RD Parallax
+	section.rd-parallax#builder
+		.rd-parallax-layer(data-speed='0.45', data-type='media', data-url='images/parallax-01.jpg')
+		.rd-parallax-layer(data-speed='0', data-type='html')
+			.shell.shell-wide.section-80.section-md-90.section-lg-140.context-dark
+				.range.range-middle.range-lg-top.range-50
+					.cell-md-5.cell-xl-4.cell-xl-preffix-1.text-md-left
+						svg( width="100" height="100" viewbox='0 0 22.68 22.68' )
+							defs
+								linearGradient( id="Gradient1", x1="1", x2="0", y1="0", y2="1" )
+									stop( stop-color="#2ed3ae" offset="0%" )
+									stop( stop-color="#109df7" offset="100%" )
+							g( fill="url(#Gradient1)" )
+								path( d='M22.68,8.62V2.26A2.26,2.26,0,0,0,20.41,0H14.05a1.56,1.56,0,0,0-1.1,2.66L20,9.73A1.56,1.56,0,0,0,22.68,8.62Z' )
+								path( d='M4.05,0H2.26A2.26,2.26,0,0,0,0,2.26V20.41a2.26,2.26,0,0,0,2.26,2.26H20.41a2.26,2.26,0,0,0,2.26-2.26V18.62a2,2,0,0,0-.57-1.38L5.43.57A2,2,0,0,0,4.05,0Z' )
+						h2 Novi Builder
+							span.label Coming soon
+						p Quickly build custom HTML websites of any kind, and use our VIDE technology to accelerate your development and reduce QA time.
+						a(target='_blank' href=builerHref).button.button-primary Try builder
+					.cell-md-7.cell-lg-6.cell-lg-preffix-1.veil.reveal-xs-block
+						img(src="images/home-11.png", width="870", height="59", alt="")
+						.twentytwenty-wrapper.twentytwenty-horizontal
+							.twentytwenty-container(data-offset='0.5', data-orientation='horizontal')
+								img.twentytwenty-before(src='images/home-before.jpg', width='500', height='300', alt='')
+								img.twentytwenty-after(src='images/home-after.jpg', width='500', height='300', alt='')
+
+	section.section.bg-white.section-80.section-md-90.section-lg-140
+		.shell.shell-wide
+			h2.wow.fadeInUp Novi Builder’s Advantages
+			span.label Coming soon
+			.range.range-center.range-60
+				.cell-lg-3.cell-sm-6
+					span.icon.icon-primary-secondary.icon-circle.icon-lg.mdi.mdi-codepen.wow.fadeInUp
+					h5.wow.fadeInUp(data-wow-delay="0.1s") Accelerate your development
+					p.wow.fadeInUp(data-wow-delay="0.2s") Speedup your project development in 2 or even 3 times using our Visual Integrated Development Environment called VIDE.
+				.cell-lg-3.cell-sm-6
+					span.icon.icon-primary-secondary.icon-circle.icon-lg.mdi.mdi-comment-question-outline.wow.fadeInUp
+					h5.wow.fadeInUp(data-wow-delay="0.1s") Reduce your QA
+					p.wow.fadeInUp(data-wow-delay="0.2s") Thanks to our visual editing feature, your project fixes will be made in a blink of the eye. As the result you receive a reduced QA time up to 50%.
+				.cell-lg-3.cell-sm-6
+					span.icon.icon-primary-secondary.icon-circle.icon-lg.mdi.mdi-cash-multiple.wow.fadeInUp
+					h5.wow.fadeInUp(data-wow-delay="0.1s") Save your money
+					p.wow.fadeInUp(data-wow-delay="0.2s") An accelered development and reduced QA time lets you to save a thousands of dollars on creating your projects. There are no needs to pay more, when you can pay less.
+				.cell-lg-3.cell-sm-6
+					span.icon.icon-primary-secondary.icon-circle.icon-lg.mdi.mdi-thumb-up-outline.wow.fadeInUp
+					h5.wow.fadeInUp(data-wow-delay="0.1s") Suggest and get satisfied
+					p.wow.fadeInUp(data-wow-delay="0.2s") The main idea of Novi Builder is to create a product by people for the people. We believe that only our clients know what they need most.
+
+
+	section.section.bg-primary.context-dark
+		.shell.shell-wide
+			.range.range-middle
+				.cell-lg-5.cell-xl-4.image-wrapper.veil.reveal-lg-block
+					img(src="images/home-16.png", alt="").image__item
+				.cell-lg-7.cell-xl-6.cell-xl-preffix-1.text-md-left.section-60
+					h2 Optimized for Mobile Devices
+					.range.text-xs-left.offset-top-60
+						.cell-sm-6
+							.unit.unit-xs-horizontal.unit-sm-horizontal.unit-md-horizontal.unit-lg-horizontal
+								.unit__left
+									span.icon.icon-sm.mdi.mdi-responsive
+								.unit__body
+									h5.text-bold 100% Responsive
+									p Monstroid² is fully responsive and will adapt itself to any mobile or tablet device.
+						.cell-sm-6
+							.unit.unit-xs-horizontal.unit-sm-horizontal.unit-md-horizontal.unit-lg-horizontal
+								.unit__left
+									span.icon.icon-sm.mdi.mdi-eye
+								.unit__body
+									h5.text-bold Retina Ready
+									p Monstroid² is Retina Ready and it guarantees that your website will always look perfect on any device.
+
+
+	section.section.section-80.section-md-90.section-lg-140.bg-gray-lighter#layouts
+		.shell.shell-wide
+			h2 Variety of Layouts
+			.range.range-center
+				.cell-xl-6.cell-lg-7.cell-md-8
+					div
+						img(src="images/home-11.png", width="870", height="59", alt="")
+					.box.owl-carousel-container
+						// Owl Carousel
+						.owl-carousel(data-autoplay-timeout='4000' data-autoplay-speed='500' data-autoplay='true' data-items='1', data-dots='false' data-nav='true'  data-loop='true', data-mouse-drag="true")
+							.item
+								img(src="images/demo-header-01.jpg", alt="")
+							.item
+								img(src="images/demo-header-02.jpg", alt="")
+							.item
+								img(src="images/demo-header-03.jpg", alt="")
+							.item
+								img(src="images/demo-header-04.jpg", alt="")
+						// Owl Carousel
+						.owl-carousel(data-autoplay-timeout='2800' data-autoplay-speed='300' data-autoplay='true' data-items='1', data-dots='false' data-nav='true'  data-loop='true', data-mouse-drag="true")
+							.item
+								img(src="images/demo-content-01.jpg", alt="")
+							.item
+								img(src="images/demo-content-02.jpg", alt="")
+							.item
+								img(src="images/demo-content-03.jpg", alt="")
+							.item
+								img(src="images/demo-content-04.jpg", alt="")
+						// Owl Carousel
+						.owl-carousel(data-autoplay-timeout='3500' data-autoplay-speed='500' data-autoplay='true' data-items='1', data-dots='false' data-nav='true'  data-loop='true', data-mouse-drag="true")
+							.item
+								img(src="images/demo-footer-01.jpg", alt="")
+							.item
+								img(src="images/demo-footer-02.jpg", alt="")
+							.item
+								img(src="images/demo-footer-03.jpg", alt="")
+							.item
+								img(src="images/demo-footer-04.jpg", alt="")
+
+
+	section.section.bg-white.section-80.section-md-90.section-lg-140
+		.shell.shell-wide
+			.range.range-50
+				.cell-lg-4.image-wrapper-2.cell-lg-push-1.veil.reveal-sm-block
+					img(src="images/home-14.png", alt="").image__item
+				.cell-md-6.cell-lg-4.text-lg-right
+					.inset-xl-right-80
+						.range.range-lg-80.range-50
+							.cell-lg-12.cell-sm-6
+								.unit.unit-sm-vertical.unit-md-vertical.unit-lg-horizontal.unit-xl-horizontal.unit-lg--inverse
+									.unit__left
+										span.icon.icon-sm.icon-primary-secondary.mdi.mdi-magnify
+									.unit__body
+										h5 SEO Friendly
+										p.veil-md.reveal-lg-block Valid code and performance optimized framework make SEO easy and hassle-free.
+							.cell-lg-12.cell-sm-6
+								.unit.unit-sm-vertical.unit-md-vertical.unit-lg-horizontal.unit-xl-horizontal.unit-lg--inverse
+									.unit__left
+										span.icon.icon-sm.icon-primary-secondary.mdi.mdi-television-guide
+									.unit__body
+										h5 Advanced UI Kit
+										p.veil-md.reveal-lg-block Monstroid² comes with a powerful and flexible extended toolkit in addition to basic Bootstrap.
+				.cell-md-6.cell-lg-4.text-lg-left.cell-lg-push-2
+					.inset-xl-left-80
+						.range.range-lg-80.range-50
+							.cell-lg-12.cell-sm-6
+								.unit.unit-sm-vertical.unit-md-vertical.unit-lg-horizontal.unit-xl-horizontal
+									.unit__left
+										span.icon.icon-sm.icon-primary-secondary.mdi.mdi-rocket
+									.unit__body
+										h5 Powerful flexbox grid system
+										p.veil-md.reveal-lg-block Monstroid² includes a powerful mobile-first flexbox grid system for building layouts.
+							.cell-lg-12.cell-sm-6
+								.unit.unit-sm-vertical.unit-md-vertical.unit-lg-horizontal.unit-xl-horizontal
+									.unit__left
+										span.icon.icon-sm.icon-primary-secondary.mdi.mdi-settings
+									.unit__body
+										h5 Flexible and Multipurpose
+										p.veil-md.reveal-lg-block Monstroid² allows to create various websites for complex and scalable projects.
+
+	section.section.context-dark.bg-primary.section-cta
+		.shell.shell-wide
+			.range.range-middle
+				.cell-lg-9.cell-xl-8.cell-xl-preffix-1.text-lg-left
+					h3
+						span.text-bold='Monstroid² '
+						| is a perfect web design solution for everybody
+					h5 Become the owner of the best solutions for creating your own website!
+				.cell-lg-3.text-center
+					a(target='_black' href=buyHref).button.button-white-style-1 Get it now
+
+	section#updates.section.bg-gray-lighter.section-60.section-md-bottom-30.section-lg-top-0.section-lg-bottom-0
+		.shell.shell-wide
+			.range.range-middle.range-center.range-md-justify
+				.cell-xs-7.cell-sm-5.cell-md-4.cell-xl-4.image-wrapper-3.text-lg-right.veil.reveal-xs-block.wow.fadeInUp
+					img(src="images/home-15.png", alt="").image__item
+				.cell-md-8.cell-xl-7.section-lg-60.text-md-left.offset-top-0
+					h3(data-wow-delay="0.15s").wow.fadeInRight='Buy Monstroid² Once and Get '
+						span.text-bold Free Updates
+					h5.wow.fadeInRight(data-wow-delay="0.20s") Enjoy a range of new layouts and child themes with regular free updates.
+	section.section.bg-white.section-80.section-md-90.section-lg-140
+		.shell.shell-wide
+			h2.wow.fadeInUp Key Features
+			.range.range-15.range-lg-60.text-left.wow.fadeInUp(data-wow-delay="0.2s")
+				.cell-lg-3.cell-md-4.cell-sm-6
+					.unit.unit-horizontal.unit-middle.unit-spacing-xs
+						.unit__left
+							span.icon.icon-primary-secondary.icon-circle.mdi.mdi-check.icon-sm
+						.unit__body
+							h5 HTML5 + JS + CSS + SCSS
+				.cell-lg-3.cell-md-4.cell-sm-6
+					.unit.unit-horizontal.unit-middle.unit-spacing-xs
+						.unit__left
+							span.icon.icon-primary-secondary.icon-circle.icon-sm.mdi.mdi-check
+						.unit__body
+							h5 Bootstrap 3+
+				.cell-lg-3.cell-md-4.cell-sm-6
+					.unit.unit-horizontal.unit-middle.unit-spacing-xs
+						.unit__left
+							span.icon.icon-primary-secondary.icon-circle.icon-sm.mdi.mdi-check
+						.unit__body
+							h5 Blog Pages
+				.cell-lg-3.cell-md-4.cell-sm-6
+					.unit.unit-horizontal.unit-middle.unit-spacing-xs
+						.unit__left
+							span.icon.icon-primary-secondary.icon-circle.icon-sm.mdi.mdi-check
+						.unit__body
+							h5 Shop Pages
+				.cell-lg-3.cell-md-4.cell-sm-6
+					.unit.unit-horizontal.unit-middle.unit-spacing-xs
+						.unit__left
+							span.icon.icon-primary-secondary.icon-circle.icon-sm.mdi.mdi-check
+						.unit__body
+							h5 SEO Optimized
+				.cell-lg-3.cell-md-4.cell-sm-6
+					.unit.unit-horizontal.unit-middle.unit-spacing-xs
+						.unit__left
+							span.icon.icon-primary-secondary.icon-circle.icon-sm.mdi.mdi-check
+						.unit__body
+							h5 Google Fonts Support
+				.cell-lg-3.cell-md-4.cell-sm-6
+					.unit.unit-horizontal.unit-middle.unit-spacing-xs
+						.unit__left
+							span.icon.icon-primary-secondary.icon-circle.icon-sm.mdi.mdi-check
+						.unit__body
+							h5 Amazing Plugins
+				.cell-lg-3.cell-md-4.cell-sm-6
+					.unit.unit-horizontal.unit-middle.unit-spacing-xs
+						.unit__left
+							span.icon.icon-primary-secondary.icon-circle.icon-sm.mdi.mdi-check
+						.unit__body
+							h5 Premium Resources
+
+
+	section.section.context-dark.bg-primary.section-cta.section-60.section-xl-110
+		.shell.shell-wide
+			.range.range-middle
+				.cell-lg-8.cell-xl-6.cell-xl-preffix-2.cell-lg-preffix-1.text-lg-left
+					h3
+						| 24/7 Effective and Friendly
+						span.text-bold=' Premium Support'
+				.cell-lg-2.text-lg-right
+					a(target='_black' href=buyHref).button.button-white-style-1 Get it now
+
+
+
+
+	// Page Footer
+	include ../sections/_footer-default
+	// Coded by Mnemon1k
+	//- only on index page
+	block footerLink
+		// {%FOOTER_LINK}

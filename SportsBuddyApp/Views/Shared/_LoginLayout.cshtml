@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] - CutOutWiz</title>
+    <environment include="Development,Production">
+        <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/cutoutwiz/css/style.css" />
+        <link rel="stylesheet" href="~/css/thisSite.css" />
+        <link rel="stylesheet" href="~/css/toastr.min.css" />
+        <link rel="stylesheet" href="~/lib/intl-tel-input/css/intlTelInput.css" />
+        <link rel="stylesheet" href="~/css/hover-min.css" />
+        <link rel="stylesheet" href="~/lib/iziModal/css/iziModal.css" />
+        <link rel="stylesheet" href="~/css/fontawesome.min.css" />
+        <link rel="stylesheet" href="~/css/animate.css" />
+
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/toastr.min.js"></script>
+    </environment>
+    <!-- Hotjar Tracking Code for http://cutoutwiz.com -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 1195437, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+</head>
+<body style="width:100%!important;overflow-x:hidden;">
+    @RenderBody()
+    <environment include="Development,Production">
+        <script src="~/cutoutwiz/js/core.min.js"></script>
+        <script src="~/cutoutwiz/js/script.js"></script>
+        <script src="~/js/appScript.js"></script>
+        <script src="~/lib/iziModal/js/iziModal.min.js"></script>
+    </environment>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

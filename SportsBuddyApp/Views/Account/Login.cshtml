@@ -1,0 +1,264 @@
+﻿@using System.Linq
+@using SportsBuddy.Models.ViewModel;
+@using SportsBuddy.Data;
+
+@model CustomRegisterViewModel
+
+@inject SignInManager<ApplicationUser> SignInManager
+@{
+    ViewData["Title"] = "Log in";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    var loginProviders = (await SignInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+    loginProviders = loginProviders.Where(x => x.Name != "Facebook").ToList();
+}
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<link rel="stylesheet" href="~/lib/iziModal/css/iziModal.css" />
+<script src="~/lib/iziModal/js/iziModal.min.js"></script>
+<style>
+    body {
+        background: #d6dbe9;
+    }
+
+    .social-icons {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .nav {
+        background: #f2f2f2;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+        .nav > li {
+            text-align: center;
+            width: 50%;
+            display: inline-block !important;
+            background: #2ED3AE;
+            height: 90px;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+            .nav > li > a {
+                padding: 30px;
+                color: white !important;
+                font-size: 25px;
+            }
+
+                .nav > li > a:hover {
+                    background: none;
+                    border: none !important;
+                }
+
+    .nav-tabs > li.active, .nav-tabs > li.active > a {
+        background: #efe !important;
+        color: black !important;
+    }
+
+    #myTabContent {
+        padding-bottom: 2%;
+    }
+
+    .input-custom {
+        border-radius: 0 !important;
+        font-style: normal;
+        height: 40px !important;
+        border: 1px solid #2ED3AE;
+        border-left: 5px solid #2ED3AE;
+    }
+
+    .button-custom {
+        border-radius: 0 !important;
+        min-width: 90px;
+        color: white;
+        font-size: 16px;
+        height: 40px;
+        background: #2ED3AE;
+        border: none;
+    }
+
+        .button-custom:hover {
+            background: white !important;
+            color: #2ED3AE !important;
+            border: none;
+        }
+
+    .nav-tabs {
+        border: none !important;
+    }
+
+    .i-color {
+        color: #2ED3AE !important;
+    }
+
+        .i-color:hover {
+            color: white !important;
+        }
+
+    .clear-button {
+        margin: 5px;
+        background: none !important;
+        border: none !important;
+        border-radius: 50%;
+        border: 1px solid #2ED3AE !important;
+        width: 55px;
+        height: 55px;
+    }
+
+        .clear-button > i {
+            color: #08D7AD;
+            padding: 8px;
+        }
+
+            .clear-button > i:hover {
+                color: white;
+            }
+
+        .clear-button:hover {
+            background: #08D7AD !important;
+            border: 1px solid #2ED3AE !important;
+            color: white !important;
+        }
+
+    span.text-danger {
+        font-size: 14px;
+    }
+</style>
+<div id="register-login-modal" class="animated flipInX" style="margin-top:5%;">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Sign In</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Sign Up</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent" style="background:#efe;width:50%;margin:0 auto;padding-top:0!important;box-shadow: 2px 2px 20px;">
+        <button type="button" class="btn btn-cutoutwiz" style="float:right;display:none" onclick="javascript:app.showLogin(this)" id="modal-cross">
+            <i class="fa fa-times"></i>
+        </button>
+        <div class="tab-pane fade active" id="home" role="tabpanel" aria-labelledby="home-tab" style="padding-top:5%;margin-bottom:5%">
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <div id="sign-in-form">
+                        <div class="form-group">
+                            <input placeholder="Email address" class="form-control input-custom" id="login-email" />
+                        </div>
+                        <div class="form-group">
+                            <input placeholder="Password" type="password" class="form-control input-custom" id="login-password" />
+                        </div>
+                        <div class="col-lg-6" style="padding:0!important">
+                            <span style="font-size:13px;cursor:pointer" id="fspan">Forgot your password?</span>
+                        </div>
+                        <div class="col-lg-6" style="padding:0!important">
+                            <button id="sign-in-button" type="submit" style="float:right" onclick="javascript: app.login(this)" class="btn btn-default button-custom">Sign In</button>
+                        </div>
+                    </div>
+                    <div style="display:none" id="forgot-area">
+                        <div id="forgot-contents">
+                            <h3 style="text-align:center;margin-bottom:20px">Reset Password</h3>
+                            <input type="email" class="form-control input-custom" placeholder="Put your account email address to reset" id="forgotemail" />
+                            <div style="margin:0 auto;text-align:center;margin-top:15px"><button class="btn btn-default btn-cutoutwiz margin-15px" style="width:45%;" id="resetPass">Reset</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" style="padding-top:32px">
+            <div class="row">
+                <div class="col-sm-offset-2 col-sm-8 col-xs-offset-1 col-xs-10" id="reg">
+                    @*<form method="post" action="/account/register">*@
+                    <div class="form-group">
+                        <input asp-for="FirstName" class="form-control input-custom" placeholder="First Name" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="LastName" class="form-control input-custom" placeholder="Last Name" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="RegEmail" class="form-control input-custom" placeholder="Email Address" />
+                        <span asp-validation-for="RegEmail" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+
+                        <input asp-for="RegPassword" class="form-control input-custom" placeholder="Password" />
+                        <span asp-validation-for="RegPassword" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="ConfirmPassword" class="form-control input-custom" placeholder="Confirm Password" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <button id="sign-up-btn" style="float:right" type="submit" onclick="javascript: app.signUp(this)" class="btn btn-default button-custom">Sign Up</button>
+                    @*</form>*@
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#home-tab").click();
+        $("#sign-up-btn").keypress(function (event) {
+            console.log(event.keyCode);
+            if (event.keyCode == 13) {
+                alert("you pressed enter");
+            }
+        });
+    });
+    $("#fspan").click(function () {
+        $("#sign-in-form,#myTab").hide();
+        $("#forgot-area,#forgot-contents,#modal-cross").show();
+    });
+    $("#profile-tab").click(function () {
+        $("#reg-success,#reg-error").hide();
+        $("#register-form,#myTab,#thitd-party-logins,#or-text").show();
+
+    });
+    $("#forgot-area").on("click", "#resetPass", function () {
+        var model = {
+            email: $("#forgotemail").val()
+        }
+        if (validateEmail(model.email)) {
+            $.ajax({
+                type: 'POST',
+                url: '/Account/ForgotPassword',
+                data: model,
+                success: function (res) {
+                    $("#forgot-contents").hide();
+                    if (res == "not") {
+                        $("#forgot-area").append('<p style="text-align:center;color:red">' +
+                            'You are not registered or you didn\'t confirmed your email.'
+                            + '</p >');
+                    } else if (!res) {
+                        $("#forgot-area").append('<p style="text-align:center;color:green">' +
+                            'Can not send email. Please try again later.'
+                            + '</p >');
+                    }
+                    else if (res) {
+                        $("#forgot-area").append('<p style="text-align:center;color:green">' +
+                            'A link to reset your password has been sent to your email.Go to the link to reset your password.'
+                            + '</p >');
+                    }
+                }
+            });
+        } else {
+            $("#forgotemail").addClass("red-border");
+            return;
+        }
+
+    });
+    function validateEmail(email) {
+        var pattern = /^([\w-\.]+)@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        return $.trim(email).match(pattern) ? true : false;
+    }
+
+</script>
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

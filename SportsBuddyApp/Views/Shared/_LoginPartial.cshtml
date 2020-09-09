@@ -1,0 +1,91 @@
+@using Microsoft.AspNetCore.Identity
+@using SportsBuddy.Models
+@using SportsBuddy.Data;
+@using SportsBuddy.Helpers
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+<style>
+    .dropbtn {
+        background-color: #4CAF50;
+        color: white;
+        /*padding: 16px;*/
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        right:10%;
+    }
+        .dropdown-content button:hover{
+            background:crimson!important;
+            color:white!important;
+
+        }
+        
+        .dropdown-content a {
+            color: black;
+            /*padding: 12px 16px;*/
+            text-decoration: none;
+            display: block;
+            margin-right: 5%;
+        }
+
+            .dropdown-content a:hover {
+                background-color: #f1f1f1
+            }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+    }
+</style>
+@if (SignInManager.IsSignedIn(User))
+    {
+        var user =await UserManager.GetUserAsync(User);
+
+    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
+     
+            <li style="padding-left:5px;padding-right:5px">
+                <div class="dropdown">
+                   @if (!string.IsNullOrEmpty(user.ProfilePicture))
+                   {
+                    <img id="profile-image" src="@Helper.GetImage(user.ProfilePicture)" style="width:35px;height:35px;border-radius:10%;cursor:pointer" class="dropbtn" />
+
+                   }
+                   else
+                   {
+                    <img id="profile-image" src="~/images/avatar2.png" style="width:35px;height:35px;border-radius:10%;cursor:pointer" class="dropbtn" />
+
+                   }
+                    @*<button type="submit" class="btn btn-link" style="color:#2ED3AE;font-weight:700;font-size:16px">Log out</button>*@
+                    <div class="dropdown-content">
+                       <button class="btn btn-cutoutwiz" type="submit" style="width:100%">LogOut</button>
+                       
+                    </div>
+                </div>
+            </li>
+    </form>
+}
+else
+{
+
+        <li><a asp-area="" asp-controller="Account" asp-action="Register">Register</a></li>
+        <li><a asp-area="" asp-controller="Account" asp-action="Login">Log in</a></li>
+  
+}
