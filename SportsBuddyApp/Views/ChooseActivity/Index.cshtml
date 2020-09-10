@@ -1,5 +1,5 @@
-﻿
-@model IEnumerable<RecretionalActivity>
+﻿@using SportsBuddyApp.Models.ViewModel; 
+@model IEnumerable<ChooseActivityViewModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -18,7 +18,7 @@
             <tr>
                 <th>SL</th>
                 <th>
-                    @Html.DisplayNameFor(model => model.ActivityName)
+                    @Html.DisplayNameFor(model => model.Activity.ActivityName)
                 </th>
                 <th>Action</th>
             </tr>
@@ -30,10 +30,19 @@
                 <tr>
                     <td>@count</td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.ActivityName)
+                        @Html.DisplayFor(modelItem => item.Activity.ActivityName)
                     </td>
                     <td>
-                        <a asp-action="Choose" asp-route-activityId="@item.ActivityId">Choose</a>
+                        @if (item.IsChoosen)
+                        {
+                            <a asp-action="Remove" asp-route-activityId="@item.Activity.ActivityId">Remove</a> <span>|</span>
+                            <a asp-action="Rank" asp-route-activityId="@item.Activity.ActivityId">Rank</a>
+                        }
+                        else
+                        {
+                            <a asp-action="Choose" asp-route-activityId="@item.Activity.ActivityId">Choose</a>
+                        }
+
                     </td>
                 </tr>
 

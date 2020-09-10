@@ -148,5 +148,18 @@ namespace SportsBuddyApp.Services
                 .Select(g => new TopUserViewModel { AgeGroup = string.Format("{0} - {1}", g.Key * 10 + 18, g.Key * 10 + 25), Count = g.Count() }).ToList();
             return topUsers;
         }
+
+        public IEnumerable<UserActivityRanking> GetAllUserActivities()
+        {
+            var allUserActivities = _context.UserActivityRankings.Include(x => x.User).Include(x => x.Activity).ToList();
+            return allUserActivities;
+        }
+
+        public UserActivityRanking GetUserActivityById(string userId, int activityId)
+        {
+            var userActivity = _context.UserActivityRankings.Include(x => x.User).Include(x => x.Activity)
+                .FirstOrDefault(f=>f.UserId == userId && f.ActivityId == activityId);
+            return userActivity;
+        }
     }
 }

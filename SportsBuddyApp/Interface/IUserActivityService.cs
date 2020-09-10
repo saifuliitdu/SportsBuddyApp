@@ -13,6 +13,7 @@ namespace SportsBuddyApp.Interface
         bool AddRegion(Region region);
         bool AddUser(ApplicationUser user);
         IEnumerable<RecretionalActivity> GetActivities();
+        IEnumerable<UserActivityRanking> GetAllUserActivities();
         bool CanChooseUptoThreeActivities(ApplicationUser user);
         bool SetRankAnActivity(ApplicationUser user, RecretionalActivity activity, Rating rating);
         bool ChooseAnActivity(ApplicationUser user, RecretionalActivity activity);
@@ -25,5 +26,6 @@ namespace SportsBuddyApp.Interface
         //Region GetTopOneRegionChoosenByTheRegisteredUsers();
         List<RegionViewModel> GetTopFiveRegionChoosenByTheRegisteredUsers();
         List<TopUserViewModel> GetTopUsersChoosenByAgeGroup();
+        UserActivityRanking GetUserActivityById(string userId, int activityId);
     }
 }

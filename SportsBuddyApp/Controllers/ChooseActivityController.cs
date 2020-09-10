@@ -7,6 +7,7 @@ using SportsBuddyApp.Interface;
 using SportsBuddy.Models;
 using System;
 using Microsoft.AspNetCore.Identity;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace CutOutWizWebApp.Controllers
 {
@@ -23,24 +24,48 @@ namespace CutOutWizWebApp.Controllers
 
         public IActionResult Index()
         {
-            var allActivities = _userActivityService.GetActivities();
+            var allUserActivities = _userActivityService.GetAllUserActivities();
 
-            //var user = _userManager.GetUserAsync(User).Result;
-            //allActivities.Where(x => x.UserActivityRankings.Select(y => y.User).Where(p => p.Id == user.Id)).ToList();
+            var user = _userManager.GetUserAsync(User).Result;
+            var allActivities = allUserActivities.Where(x => x.User.Id == user.Id)
+                .Select(y => new ChooseActivityViewModel { Activity = y.Activity, IsChoosen = y.User.Id == user.Id }).ToList();
 
-            return View(allActivities);
+            var otherActivities = allUserActivities.GroupBy(g => g.ActivityId).Select(y =>
+               !allActivities.Select(x => x.Activity.ActivityId).ToList().Contains(y.FirstOrDefault().ActivityId)?
+                 new ChooseActivityViewModel { Activity = y.FirstOrDefault().Activity, IsChoosen = y.FirstOrDefault().User.Id == user.Id }:
+                 allActivities.FirstOrDefault(f=>f.Activity.ActivityId == y.FirstOrDefault().ActivityId)
+            ).ToList();
+
+            return View(otherActivities);
         }
-
         public IActionResult Choose(int activityId)
         {
-            var user =  _userManager.GetUserAsync(User).Result;
+            var user = _userManager.GetUserAsync(User).Result;
             var activity = _userActivityService.GetActivityById(activityId);
 
             bool result = _userActivityService.ChooseAnActivity(user, activity);
 
             return RedirectToAction("Index");
         }
+        public IActionResult Rank(int activityId)
+        {
+            if (activityId <= 0) return RedirectToAction("Index");
+            var user = _userManager.GetUserAsync(User).Result;
+            var userActivity = _userActivityService.GetUserActivityById(user.Id, activityId);
+            RankActivityViewModel rankActivityViewModel = new RankActivityViewModel {ActivityId = activityId, Activity = userActivity.Activity, Rating = (int)userActivity.Rating};
 
+            return View(rankActivityViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult RankAnActivity(RankActivityViewModel model)
+        {
+            if (model.Rating > 5) { @ViewData["error"] = "Please input 1 to 5 rating."; return RedirectToAction("Rank", new { activityId = model.ActivityId }); }
+            var user = _userManager.GetUserAsync(User).Result;
+            var activity = _userActivityService.GetActivityById(model.ActivityId);
+            _userActivityService.SetRankAnActivity(user, activity, (Rating)model.Rating);
+            return RedirectToAction("Index");
+        }
         //[HttpPost]
         //public IActionResult CreateActivity(RecretionalActivity recretionalActivity)
         //{
