@@ -47,7 +47,7 @@ namespace CutOutWizWebApp.Controllers
 
             return RedirectToAction("Index");
         }
-        public IActionResult Rank(int activityId)
+        public IActionResult Rating(int activityId)
         {
             if (activityId <= 0) return RedirectToAction("Index");
             var user = _userManager.GetUserAsync(User).Result;
@@ -58,7 +58,7 @@ namespace CutOutWizWebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult RankAnActivity(RankActivityViewModel model)
+        public IActionResult RatingActivity(RankActivityViewModel model)
         {
             if (model.Rating > 5) { @ViewData["error"] = "Please input 1 to 5 rating."; return RedirectToAction("Rank", new { activityId = model.ActivityId }); }
             var user = _userManager.GetUserAsync(User).Result;
@@ -66,19 +66,5 @@ namespace CutOutWizWebApp.Controllers
             _userActivityService.SetRankAnActivity(user, activity, (Rating)model.Rating);
             return RedirectToAction("Index");
         }
-        //[HttpPost]
-        //public IActionResult CreateActivity(RecretionalActivity recretionalActivity)
-        //{
-        //    try
-        //    {
-        //        _userActivityService.AddAnActivity(recretionalActivity);
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return View();
-        //    }
-        //}
-
     }
 }

@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Identity
 @using SportsBuddy.Models
 @using SportsBuddy.Data;
-@using SportsBuddy.Helpers
+
 
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
@@ -65,7 +65,7 @@
                 <div class="dropdown">
                    @if (!string.IsNullOrEmpty(user.ProfilePicture))
                    {
-                    <img id="profile-image" src="@Helper.GetImage(user.ProfilePicture)" style="width:35px;height:35px;border-radius:10%;cursor:pointer" class="dropbtn" />
+                    <img id="profile-image" src="user.ProfilePicture" style="width:35px;height:35px;border-radius:10%;cursor:pointer" class="dropbtn" />
 
                    }
                    else

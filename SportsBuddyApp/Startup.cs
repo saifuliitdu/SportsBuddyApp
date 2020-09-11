@@ -74,9 +74,6 @@ namespace CutOutWizWebApp
 
             }));
 
-            // Add application services.
-            services.AddTransient<IEmailSender, EmailSender>();
-            services.AddScoped<IUserActivityService, UserActivityService>();
             services.AddSession();
             services.AddMvc();
             //services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
@@ -103,6 +100,15 @@ namespace CutOutWizWebApp
                 // Make the session cookie essential
                 // options.Cookie.IsEssential = true;
             });
+            RegisterServices(services);
+        }
+        private void RegisterServices(IServiceCollection services)
+        {
+            // Add application services.
+            services.AddTransient<IEmailSender, EmailSender>();
+            services.AddScoped<IUserActivityService, UserActivityService>();
+            services.AddScoped<IUserService, UserService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -135,7 +141,7 @@ namespace CutOutWizWebApp
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=AdminPanel}/{action=Index}/{id?}");
+                    template: "{controller=Dashboard}/{action=Index}/{id?}");
             });
         }
     }

@@ -36,7 +36,7 @@
                         @if (item.IsChoosen)
                         {
                             <a asp-action="Remove" asp-route-activityId="@item.Activity.ActivityId">Remove</a> <span>|</span>
-                            <a asp-action="Rank" asp-route-activityId="@item.Activity.ActivityId">Rank</a>
+                            <a asp-action="Rating" asp-route-activityId="@item.Activity.ActivityId">Rating</a>
                         }
                         else
                         {

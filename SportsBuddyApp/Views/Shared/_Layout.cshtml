@@ -9,7 +9,8 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
-        <link href="~/css/thisSite.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/css/fontawesome.min.css" />
+        <link rel="stylesheet" href="~/css/thisSite.css" />
         <link rel="stylesheet" href="~/css/thumbnail-gallery.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
         <link rel="stylesheet" href="~/css/uptown.css" />
@@ -47,14 +48,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="AdminPanel" asp-action="Index" class="navbar-brand">Dashboard</a>
+                <a asp-area="" asp-controller="Dashboard" asp-action="Index" class="navbar-brand">Dashboard</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
 
                     <li><a asp-area="" asp-controller="Activity" asp-action="Index">Activity</a></li>
                     <li><a asp-area="" asp-controller="ChooseActivity" asp-action="Index">Choose An Activity</a></li>
-                    <li><a asp-area="" asp-controller="RankActivity" asp-action="Index">Rank An Activity</a></li>
+                    <li><a asp-area="" asp-controller="Profile" asp-action="YourProfile">Profile</a></li>
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div>

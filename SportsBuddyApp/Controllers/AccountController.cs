@@ -77,7 +77,7 @@ namespace CutOutWizWebApp.Controllers
                         var res = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
                         if (res.Succeeded)
                         {
-                            return Json(new { status = true, message = "/AdminPanel/Index", type = "url" });
+                            return Json(new { status = true, message = "/Dashboard/Index", type = "url" });
                         }
                     }
                     return Json(new { status = false, message = "Please verify your E-mail address.", type = "message" });
@@ -89,9 +89,9 @@ namespace CutOutWizWebApp.Controllers
                     if (userole[0] == "Admin")
                     {
                         await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
-                        return Json(new { status = true, message = "/AdminPanel/Index", type = "url" });
+                        return Json(new { status = true, message = "/Dashboard/Index", type = "url" });
                     }
-                     return Json(new { status = true, message = "/AdminPanel/Index", type = "url" });
+                     return Json(new { status = true, message = "/Dashboard/Index", type = "url" });
                     //return Json(new { status = true, message = "/Upload/UploadPhoto", type = "url" });
                 }
                 else

@@ -8,11 +8,11 @@ using SportsBuddy.Models;
 
 namespace CutOutWizWebApp.Controllers
 {
-    [Authorize(Roles = "Admin,SuperAdmin")]
-    public class AdminPanelController : Controller
+    [Authorize(Roles = "Admin,SuperAdmin,")]
+    public class DashboardController : Controller
     {
         private readonly IUserActivityService _userActivityService;
-        public AdminPanelController(IUserActivityService userActivityService)
+        public DashboardController(IUserActivityService userActivityService)
         {
             _userActivityService = userActivityService;
         }
