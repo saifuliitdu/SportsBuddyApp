@@ -1,13 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.Data.Edm.Csdl;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using SportsBuddy.Models;
 using SportsBuddy.StaticData;
 using SportsBuddyApp.Interface;
 using SportsBuddyApp.Services;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -21,7 +18,7 @@ namespace SportsBuddy.Data
         private const string DefaultAdminUserEmail = "saiful@gmail.com";
         private const string DefaultAdminUserPassword = "123456aA@";
 
-        private static readonly string[] DefaultRoles = { Role.SuperAdmin, Role.Admin, Role.ClientAdmin, Role.ClientUser, Role.KeyPerson, Role.QC, Role.User, Role.HR };
+        private static readonly string[] DefaultRoles = { Role.SuperAdmin, Role.Admin,  Role.User };
 
         private static async Task CreateDefaultRoles(RoleManager<TIdentityRole> roleManager)
         {
@@ -61,14 +58,13 @@ namespace SportsBuddy.Data
                 {
                     user = new TIdentityUser
                     {
-                        //UserNumber = 1,
-                        UserName = "saiful@gmail.com",
+                        FirstName = "Saiful",
+                        LastName = "Islam",
+                        UserName = DefaultAdminUserEmail,
                         Email = DefaultAdminUserEmail,
                         EmailConfirmed = true,
-                        Region = new Region { RegionName = "Bangladesh" }
-                        //Designation = Designation.SuperAdmin,
-                        //FullName = "CutOutWiz",
-                        //DefaultPasswordChanged = true
+                        Region = new Region { RegionName = "Bangladesh" },
+                        DateOfBirth = new DateTime(2000, 01, 01)
                     };
                     var userResult = await userManager.CreateAsync(user, DefaultAdminUserPassword);
 
@@ -108,13 +104,13 @@ namespace SportsBuddy.Data
             var userManager = services.GetRequiredService<UserManager<TIdentityUser>>();
             var roleManager = services.GetRequiredService<RoleManager<TIdentityRole>>();
 
-            //await context.Database.EnsureCreatedAsync(); //This causes migration error
+            await context.Database.EnsureCreatedAsync(); //This causes migration error
 
             await CreateDefaultRoles(roleManager);
             var defaultAdminUser = await CreateDefaultAdminUser(userManager);
 
             await AddDefaultAdminRoleToDefaultAdminUser(userManager, defaultAdminUser);
-            SaveInitData(context);
+            //SaveInitData(context);
         }
 
         private static void SaveInitData(ApplicationDbContext context)
@@ -122,19 +118,22 @@ namespace SportsBuddy.Data
             if (context.Activities.Count() > 0) return;
 
             IUserActivityService _userActivityService = new UserActivityService(context);
+            IActivityService _activityService = new ActivityService(context);
+            IRegionService _regionService = new RegionService(context);
+            IUserService _userService = new UserService(context);
 
             RecretionalActivity kayaking = new RecretionalActivity { ActivityName = "Kayaking" };
-            _userActivityService.AddAnActivity(kayaking);
+            _activityService.AddAnActivity(kayaking);
             RecretionalActivity camping = new RecretionalActivity { ActivityName = "Camping" };
-            _userActivityService.AddAnActivity(camping);
+            _activityService.AddAnActivity(camping);
             RecretionalActivity fishing = new RecretionalActivity { ActivityName = "Fishing" };
-            _userActivityService.AddAnActivity(fishing);
+            _activityService.AddAnActivity(fishing);
             RecretionalActivity hiking = new RecretionalActivity { ActivityName = "Hiking" };
-            _userActivityService.AddAnActivity(hiking);
+            _activityService.AddAnActivity(hiking);
             RecretionalActivity sail = new RecretionalActivity { ActivityName = "Sailing" };
-            _userActivityService.AddAnActivity(sail);
+            _activityService.AddAnActivity(sail);
             RecretionalActivity biking = new RecretionalActivity { ActivityName = "Biking" };
-            _userActivityService.AddAnActivity(biking);
+            _activityService.AddAnActivity(biking);
             //////////////////////
             Region japan = new Region { RegionName = "Japan" };
             Region usa = new Region { RegionName = "USA" };
@@ -143,12 +142,12 @@ namespace SportsBuddy.Data
             Region india = new Region { RegionName = "India" };
             Region pak = new Region { RegionName = "Pakistan" };
             Region nepal = new Region { RegionName = "Nepal" };
-            
-            _userActivityService.AddRegion(japan);
-            _userActivityService.AddRegion(usa);
-            _userActivityService.AddRegion(canada);
-            _userActivityService.AddRegion(turk);
-            _userActivityService.AddRegion(india);
+
+            _regionService.AddRegion(japan);
+            _regionService.AddRegion(usa);
+            _regionService.AddRegion(canada);
+            _regionService.AddRegion(turk);
+            _regionService.AddRegion(india);
 
             ApplicationUser safa = new ApplicationUser { UserName = "safa@gmail.com", Region = japan, DateOfBirth = new DateTime(2000, 01, 01) };
             ApplicationUser alif = new ApplicationUser { UserName = "alif@gmail.com", Region = japan, DateOfBirth = new DateTime(2001, 01, 01) };
@@ -163,18 +162,18 @@ namespace SportsBuddy.Data
             ApplicationUser polash = new ApplicationUser { UserName = "polash@gmail.com", Region = nepal, DateOfBirth = new DateTime(1988, 01, 01) };
             ApplicationUser kamal = new ApplicationUser { UserName = "kamal@gmail.com", Region = nepal, DateOfBirth = new DateTime(1978, 01, 01) };
 
-            _userActivityService.AddUser(safa);
-            _userActivityService.AddUser(alif);
-            _userActivityService.AddUser(hamza);
-            _userActivityService.AddUser(kabir);
-            _userActivityService.AddUser(saif);
-            _userActivityService.AddUser(salman);
-            _userActivityService.AddUser(rubel);
-            _userActivityService.AddUser(talha);
-            _userActivityService.AddUser(rahim);
-            _userActivityService.AddUser(karim);
-            _userActivityService.AddUser(polash);
-            _userActivityService.AddUser(kamal);
+            _userService.AddUser(safa);
+            _userService.AddUser(alif);
+            _userService.AddUser(hamza);
+            _userService.AddUser(kabir);
+            _userService.AddUser(saif);
+            _userService.AddUser(salman);
+            _userService.AddUser(rubel);
+            _userService.AddUser(talha);
+            _userService.AddUser(rahim);
+            _userService.AddUser(karim);
+            _userService.AddUser(polash);
+            _userService.AddUser(kamal);
 
             _userActivityService.ChooseAnActivity(safa, kayaking);
             _userActivityService.ChooseAnActivity(safa, camping);

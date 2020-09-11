@@ -10,34 +10,34 @@ using System;
 namespace CutOutWizWebApp.Controllers
 {
     [Authorize(Roles = "SuperAdmin")]
-    public class ActivityController : Controller
+    public class RegionController : Controller
     {
-        private readonly IActivityService _activityService;
-        public ActivityController(IActivityService activityService)
+        private readonly IRegionService _regionService;
+        public RegionController(IRegionService regionService)
         {
-            _activityService = activityService;
+            _regionService = regionService;
         }
 
         public IActionResult Index()
         {
-            var allActivities = _activityService.GetAllActivities();
+            var allRegions = _regionService.GetAllRegions();
 
-            return View(allActivities);
+            return View(allRegions);
         }
 
         public IActionResult Create()
         {
-            RecretionalActivity recretionalActivity = new RecretionalActivity();
+            Region region = new Region();
 
-            return View(recretionalActivity);
+            return View(region);
         }
 
         [HttpPost]
-        public IActionResult CreateActivity(RecretionalActivity recretionalActivity)
+        public IActionResult CreateRegion(Region region)
         {
             try
             {
-                _activityService.AddAnActivity(recretionalActivity);
+                _regionService.AddRegion(region);
                 return RedirectToAction("Index");
             }
             catch (Exception e)
@@ -46,33 +46,33 @@ namespace CutOutWizWebApp.Controllers
             }
         }
 
-        public IActionResult Edit(int activityId)
+        public IActionResult Edit(int regionId)
         {
-            var activity = _activityService.GetActivityById(activityId);
+            var region = _regionService.GetRegionById(regionId);
 
-            return View(activity);
+            return View(region);
         }
         [HttpPost]
-        public IActionResult EditActivity(RecretionalActivity recretionalActivity)
+        public IActionResult EditRegion(Region region)
         {
             try
             {
-                bool result = _activityService.UpdateActivity(recretionalActivity);
+                bool result = _regionService.UpdateRegion(region);
                 if (result)
                     return RedirectToAction("Index");
                 else
-                    return View(recretionalActivity);
+                    return View(region);
             }
             catch (Exception e)
             {
-                return View(recretionalActivity);
+                return View(region);
             }
         }
-        public IActionResult Delete(int activityId)
+        public IActionResult Delete(int regionId)
         {
             try
             {
-                bool result = _activityService.DeleteActivity(activityId);
+                bool result = _regionService.DeleteRegion(regionId);
                 if (result)
                     return RedirectToAction("Index");
                 else

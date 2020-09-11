@@ -21,44 +21,11 @@ namespace SportsBuddyApp.Services
             _context.Regions.Add(region);
             return SaveChanges();
         }
-        public bool AddUser(ApplicationUser user)
-        {
-            _context.Users.Add(user);
-            return SaveChanges();
-        }
-        public bool AddAnActivity(RecretionalActivity activity)
-        {
-            _context.Activities.Add(activity);
-            return SaveChanges();
-        }
         private bool SaveChanges()
         {
             return _context.SaveChanges() > 0;
         }
 
-        public IEnumerable<RecretionalActivity> GetActivities()
-        {
-            return _context.Activities.ToList();
-        }
-        public RecretionalActivity GetActivityById(int activityId)
-        {
-            var activity = _context.Activities.FirstOrDefault(f => f.ActivityId == activityId);
-            return activity;
-        }
-        public bool UpdateActivity(RecretionalActivity activity)
-        {
-            var existingActivity = GetActivityById(activity.ActivityId);
-            if (existingActivity != null)
-                existingActivity.ActivityName = activity.ActivityName;
-            return SaveChanges();
-        }
-        public bool DeleteActivity(int activityId)
-        {
-            var existingActivity = GetActivityById(activityId);
-            if (existingActivity != null)
-                _context.Activities.Remove(existingActivity);
-            return SaveChanges();
-        }
         public bool CanChooseUptoThreeActivities(ApplicationUser user)
         {
             var userActivityCount = _context.UserActivityRankings
@@ -83,7 +50,6 @@ namespace SportsBuddyApp.Services
             var userActivity = _context.UserActivityRankings
                 .Include(p => p.User)
                 .Include(p => p.Activity)
-                //.Include(p => p.Rating)
                 .FirstOrDefault(x => x.User.Id == user.Id && x.Activity.ActivityId == activity.ActivityId);
 
             userActivity.Rating = rating;

@@ -8,13 +8,11 @@
 @{
     ViewData["Title"] = "Log in";
     Layout = "~/Views/Shared/_LoginLayout.cshtml";
-    var loginProviders = (await SignInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-    loginProviders = loginProviders.Where(x => x.Name != "Facebook").ToList();
 }
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+@*<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
 <link rel="stylesheet" href="~/lib/iziModal/css/iziModal.css" />
-<script src="~/lib/iziModal/js/iziModal.min.js"></script>
+<script src="~/lib/iziModal/js/iziModal.min.js"></script>*@
 <style>
     body {
         background: #d6dbe9;
@@ -170,31 +168,50 @@
         </div>
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" style="padding-top:32px">
             <div class="row">
+                <div id="register-error"></div>
                 <div class="col-sm-offset-2 col-sm-8 col-xs-offset-1 col-xs-10" id="reg">
-                    @*<form method="post" action="/account/register">*@
+                    
                     <div class="form-group">
-                        <input asp-for="FirstName" class="form-control input-custom" placeholder="First Name" />
+                        <input id="FirstName" class="form-control input-custom" placeholder="First Name" />
+                    </div>
+                    <div class="form-group">
+                        <input  id="LastName" class="form-control input-custom" placeholder="Last Name" />
+                    </div>
+                    <div class="form-group">
+                        <input id="RegEmail" class="form-control input-custom" placeholder="Email Address" />
+                    </div>
+                    <div class="form-group">
+                        <input id="RegPassword" class="form-control input-custom" placeholder="Password" />
+                    </div>
+                    <div class="form-group">
+                        <input id="ConfirmPassword" class="form-control input-custom" placeholder="Confirm Password" />
+                    </div>
+                    <button id="sign-up-btn" style="float:right" type="submit" onclick="javascript: app.signUp(this)" class="btn btn-default button-custom">Sign Up</button>
+                   
+                    @*<form method="post" action="/account/register">
+                    <div class="form-group">
+                        <input asp-for="FirstName" id="FirstName" class="form-control input-custom" placeholder="First Name" />
                         <span asp-validation-for="FirstName" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <input asp-for="LastName" class="form-control input-custom" placeholder="Last Name" />
+                        <input asp-for="LastName" id="LastName" class="form-control input-custom" placeholder="Last Name" />
                         <span asp-validation-for="LastName" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <input asp-for="RegEmail" class="form-control input-custom" placeholder="Email Address" />
+                        <input asp-for="RegEmail" id="RegEmail" class="form-control input-custom" placeholder="Email Address" />
                         <span asp-validation-for="RegEmail" class="text-danger"></span>
                     </div>
                     <div class="form-group">
 
-                        <input asp-for="RegPassword" class="form-control input-custom" placeholder="Password" />
+                        <input asp-for="RegPassword" id="RegPassword" class="form-control input-custom" placeholder="Password" />
                         <span asp-validation-for="RegPassword" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <input asp-for="ConfirmPassword" class="form-control input-custom" placeholder="Confirm Password" />
+                        <input asp-for="ConfirmPassword" id="ConfirmPassword" class="form-control input-custom" placeholder="Confirm Password" />
                         <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                     </div>
                     <button id="sign-up-btn" style="float:right" type="submit" onclick="javascript: app.signUp(this)" class="btn btn-default button-custom">Sign Up</button>
-                    @*</form>*@
+                    </form>*@
 
                 </div>
             </div>

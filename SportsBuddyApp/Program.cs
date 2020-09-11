@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SportsBuddy.Data;
 using Microsoft.AspNetCore.Identity;
 
-namespace CutOutWizWebApp
+namespace SportsBuddyApp
 {
     public class Program
     {

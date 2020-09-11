@@ -136,7 +136,7 @@ using SportsBuddy.Data;
             WriteLiteral("    ");
             EndContext();
             BeginContext(1442, 1123, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb2af4658ded40e2b5b9568f2d3f4193", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "004814357a6448fa83d4ce6ad20fd833", async() => {
                 BeginContext(1556, 110, true);
                 WriteLiteral("\r\n     \r\n            <li style=\"padding-left:5px;padding-right:5px\">\r\n                <div class=\"dropdown\">\r\n");
                 EndContext();
@@ -161,7 +161,7 @@ using SportsBuddy.Data;
                 WriteLiteral("                    ");
                 EndContext();
                 BeginContext(2002, 133, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9a56581ea55444d59129a85bb256b9a3", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "30389da212b149cea89e4bf0b4d8065e", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -239,7 +239,7 @@ else
             WriteLiteral("        <li>");
             EndContext();
             BeginContext(2593, 74, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd48c2daff584a379a3b579a53c33da6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ee43fe09898b4c2c934431da51ca7344", async() => {
                 BeginContext(2655, 8, true);
                 WriteLiteral("Register");
                 EndContext();
@@ -265,7 +265,7 @@ else
             WriteLiteral("</li>\r\n        <li>");
             EndContext();
             BeginContext(2686, 69, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "32dd19f4256f4f119ab0c0e445c017bb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ba89d5198ad43dcb5fd2c89d9be8270", async() => {
                 BeginContext(2745, 6, true);
                 WriteLiteral("Log in");
                 EndContext();

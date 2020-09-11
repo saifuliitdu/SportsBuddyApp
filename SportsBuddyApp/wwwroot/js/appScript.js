@@ -46,27 +46,27 @@
                 $(this).removeClass("red-border");
             }
         });
-        if (!data.regPassword.match(app.upperCase) || !data.ConfirmPassword.match(app.upperCase)) {
+        if (!data.regPassword.match(app.upperCase) || !data.confirmPassword.match(app.upperCase)) {
             if (!data.regPassword.match(app.upperCase)) {
                 $("#RegPassword").addClass("red-border");
-            } if (!data.ConfirmPassword.match(app.upperCase)) {
+            } if (!data.confirmPassword.match(app.upperCase)) {
                 $("#ConfirmPassword").addClass("red-border");
             }
             $("#register-error").show().text("Password length must be 6 containing at least one number, an uppercase and a lowercase letter.");
             return;
         }
-        if (!data.regPassword.match(app.lowerCase) || !data.ConfirmPassword.match(app.lowerCase)) {
+        if (!data.regPassword.match(app.lowerCase) || !data.confirmPassword.match(app.lowerCase)) {
             if (!data.regPassword.match(app.lowerCase)) {
                 $("#RegPassword").addClass("red-border");
-            } if (!data.ConfirmPassword.match(app.lowerCase)) {
+            } if (!data.confirmPassword.match(app.lowerCase)) {
                 $("#ConfirmPassword").addClass("red-border");
             }
             $("#register-error").show().text("Password length must be 6 containing at least one number, an uppercase and a lowercase letter.");
             return;
         }
 
-        if (data.ConfirmPassword.length < 6 || data.regPassword.length < 6) {
-            if (data.ConfirmPassword.length < 6) {
+        if (data.confirmPassword.length < 6 || data.regPassword.length < 6) {
+            if (data.confirmPassword.length < 6) {
                 $("#RegPassword").addClass("red-border");
             } if (data.regPassword.length < 6) {
                 $("#ConfirmPassword").addClass("red-border");
@@ -82,7 +82,7 @@
         if (!validateEmail(data.regEmail)) {
             $("#RegEmail").addClass("red-border");
         }
-        if (data.ConfirmPassword != data.regPassword) {
+        if (data.confirmPassword != data.regPassword) {
             $("#register-error").show().find('p').text("Password mismatch.");
             $("#ConfirmPassword").addClass("red-border");
             $("#RegPassword").addClass("red-border");
@@ -97,6 +97,9 @@
                     if (res.status) {
                         $("#register-form,#reg-error,#myTab,#thitd-party-logins,#or-text").hide();
                         $("#reg-success").show().find('p').text(res.msg);
+                        setTimeout(function () {
+                            window.location.href = "/Account/Login";
+                        }, 4000);
                     }
                     else {
                         $("#register-form,#reg-success,#myTab,#thitd-party-logins,#or-text").hide();

@@ -7,10 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using CutOutWizWebApp.Models.AccountViewModels;
 using Microsoft.AspNetCore.Cors;
-using CutOutWizWebApp.Services;
 using Microsoft.Extensions.Configuration;
 using SportsBuddy.Data;
-using SportsBuddy.Models.AccountViewModels;
+using SportsBuddy.Models.ViewModel;
 
 namespace CutOutWizWebApp.Controllers
 {
@@ -22,7 +21,6 @@ namespace CutOutWizWebApp.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
         private readonly ApplicationDbContext _context;
         private readonly IConfiguration _configuration;
@@ -33,12 +31,10 @@ namespace CutOutWizWebApp.Controllers
             RoleManager<IdentityRole> roleManager,
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
-            IEmailSender emailSender,
             ILogger<AccountController> logger)
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            _emailSender = emailSender;
             _logger = logger;
             _roleManager = roleManager;
             _context = context;
@@ -64,7 +60,7 @@ namespace CutOutWizWebApp.Controllers
             if (ModelState.IsValid)
             {
                 var user = _context.Users.Where(x => x.UserName == model.Email).FirstOrDefault();
-                
+
                 if (user == null)
                 {
                     return Json(new { status = false, message = "This email is not registered", type = "message" });
@@ -91,7 +87,7 @@ namespace CutOutWizWebApp.Controllers
                         await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
                         return Json(new { status = true, message = "/Dashboard/Index", type = "url" });
                     }
-                     return Json(new { status = true, message = "/Dashboard/Index", type = "url" });
+                    return Json(new { status = true, message = "/Dashboard/Index", type = "url" });
                     //return Json(new { status = true, message = "/Upload/UploadPhoto", type = "url" });
                 }
                 else
@@ -104,7 +100,28 @@ namespace CutOutWizWebApp.Controllers
                 return Json(new { status = false, message = "Please enter valid credential.", type = "message" });
             }
         }
-        
+
+        [AllowAnonymous]
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterViewModel model)
+        {
+            if (!await _roleManager.RoleExistsAsync("User"))
+                await _roleManager.CreateAsync(new IdentityRole { Name = "User", NormalizedName = "USER" });
+
+            var user = new ApplicationUser { Email = model.RegEmail, UserName = model.RegEmail, FirstName = model.FirstName, LastName = model.LastName };
+            var result = await _userManager.CreateAsync(user, model.RegPassword);
+
+            if (result.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(user, "User");
+                return Json(true);
+            }
+            else
+            {
+                return Json(false);
+            }
+        }
+
 
         [AllowAnonymous]
         [HttpPost]
@@ -134,34 +151,6 @@ namespace CutOutWizWebApp.Controllers
             }
         }
 
-        [AllowAnonymous]
-        [HttpPost]
-        public async Task<IActionResult> Register(RegisterViewModel model)
-        {
-            if (!await _roleManager.RoleExistsAsync("Admin"))
-                await _roleManager.CreateAsync(new IdentityRole { Name = "Admin", NormalizedName = "ADMIN" });
-
-            //if (ModelState.IsValid)
-            //{
-                var user = new ApplicationUser { Email = model.RegEmail, UserName = model.RegEmail, FirstName = model.FirstName, LastName = model.LastName };
-                var result = await _userManager.CreateAsync(user, model.RegPassword);
-
-                if (result.Succeeded)
-                {
-                    await _userManager.AddToRoleAsync(user, "Admin");
-                    return Json(true);
-                }
-                else
-                {
-                    return Json(false);
-                }
-            //}
-            //else
-            //{
-            //    return Json(true);
-            //}
-        }
-
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Register(string returnUrl = null)
@@ -170,7 +159,7 @@ namespace CutOutWizWebApp.Controllers
             return View();
         }
 
-     
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
@@ -180,7 +169,7 @@ namespace CutOutWizWebApp.Controllers
             return RedirectToAction(nameof(AccountController.Login), "Account");
         }
 
-        
+
         [HttpGet]
         public IActionResult AccessDenied()
         {

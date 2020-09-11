@@ -66,36 +66,21 @@ namespace CutOutWizWebApp.Controllers
                 if (user != null)
                 {
                     var region = _context.Regions.FirstOrDefault(f => f.RegionId == profile.RegionId);
-                    //if (!_context.Users.Where(x => x.Email != user.Email).Any())
-                    //{
-                    //user.PhoneNumber = profile.Mobile ?? "";
                     user.DateOfBirth = GetDateTimeFromDateString(profile.DateOfBirth);
                     user.Region = region;
 
                     _context.SaveChanges();
-                    //if (!string.IsNullOrEmpty(profile.Password) && !string.IsNullOrEmpty(profile.NewPassword) && !string.IsNullOrEmpty(profile.ConfirmPassword) && profile.NewPassword.Equals(profile.ConfirmPassword))
-                    //{
-                    //    await _userManager.ChangePasswordAsync(user, profile.Password, profile.NewPassword);
-                    //    await _signInManager.SignOutAsync();
-                    //    return Json("pass");
-                    //}
-
+                    
                     return RedirectToAction("YourProfile");
-                    //}
-                    //else
-                    //{
-                    //    return Json("Email already used.");
-                    //}
+                 
                 }
                 else
                 {
-                    //Helper.Log("error");
                     return Json("error");
                 }
             }
             catch (Exception e)
             {
-                //Helper.Log(e.ToString());
                 return Json("error");
             }
         }
@@ -106,55 +91,8 @@ namespace CutOutWizWebApp.Controllers
             var month = Convert.ToInt32(arr[1] ?? "");
             var day = Convert.ToInt32(arr[2] ?? "");
 
-
             var dateTime = new DateTime(year, month, day);
             return dateTime;
         }
-        //[HttpPost]
-        //public async Task<IActionResult> updatePassword(ProfileViewModel model) {
-        //    var user = _userManager.GetUserAsync(User).Result;
-        //    if(!string.IsNullOrEmpty(model.Password) && (model.NewPassword == model.ConfirmPassword))
-        //    {
-        //        await _userManager.ChangePasswordAsync(user, model.Password, model.NewPassword);
-        //        await _signInManager.SignOutAsync();
-        //        return Json(true);
-        //    }
-        //    else
-        //    {
-        //        return Json(false);
-        //    }
-        //}
-        //[HttpPost]
-        //public async Task<IActionResult> UploadProfilePicture() {           
-        //    var user = _userManager.GetUserAsync(User).Result;
-        //    var file = Request.Form.Files[0];
-        //    try
-        //    {
-        //        var uploadFolderUrl = $"{Root_Directory}/{user.Email}/ProfilePictures";
-        //        if (file != null)
-        //        {                  
-        //            if (!Directory.Exists(uploadFolderUrl))
-        //                Directory.CreateDirectory(uploadFolderUrl);
-        //            var path = Path.Combine(uploadFolderUrl);
-        //            using (var fileStream = new FileStream(Path.Combine(path, $"{user.Id}.jpg"), FileMode.Create))
-        //            {
-
-        //                await file.CopyToAsync(fileStream);
-        //            }
-
-        //        }
-        //        var imageByte = Helper.GetImage($"{uploadFolderUrl}/{user.Id}.jpg");
-        //        user.ProfilePicture = $"{uploadFolderUrl}/{user.Id}.jpg";
-        //           await _userManager.UpdateAsync(user);
-
-        //        return Json(imageByte);
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        Helper.Log(ex.ToString());
-        //        return Json(false);
-        //    }
-
-        //}
     }
 }

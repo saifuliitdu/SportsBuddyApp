@@ -8,6 +8,7 @@ using SportsBuddy.Models;
 using System;
 using Microsoft.AspNetCore.Identity;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Collections.Generic;
 
 namespace CutOutWizWebApp.Controllers
 {
@@ -16,32 +17,39 @@ namespace CutOutWizWebApp.Controllers
     {
         private readonly IUserActivityService _userActivityService;
         private readonly UserManager<ApplicationUser> _userManager;
-        public ChooseActivityController(IUserActivityService userActivityService, UserManager<ApplicationUser> userManager)
+        private readonly IActivityService _activityService;
+        public ChooseActivityController(IUserActivityService userActivityService, UserManager<ApplicationUser> userManager, IActivityService activityService)
         {
             _userActivityService = userActivityService;
             _userManager = userManager;
+            _activityService = activityService;
         }
 
         public IActionResult Index()
         {
+            List<ChooseActivityViewModel> chooseActivites = new List<ChooseActivityViewModel>();
+            List<RecretionalActivity> allActivities = new List<RecretionalActivity>();
             var allUserActivities = _userActivityService.GetAllUserActivities();
-
             var user = _userManager.GetUserAsync(User).Result;
-            var allActivities = allUserActivities.Where(x => x.User.Id == user.Id)
-                .Select(y => new ChooseActivityViewModel { Activity = y.Activity, IsChoosen = y.User.Id == user.Id }).ToList();
+            allActivities = _activityService.GetAllActivities().ToList();
 
-            var otherActivities = allUserActivities.GroupBy(g => g.ActivityId).Select(y =>
-               !allActivities.Select(x => x.Activity.ActivityId).ToList().Contains(y.FirstOrDefault().ActivityId)?
-                 new ChooseActivityViewModel { Activity = y.FirstOrDefault().Activity, IsChoosen = y.FirstOrDefault().User.Id == user.Id }:
-                 allActivities.FirstOrDefault(f=>f.Activity.ActivityId == y.FirstOrDefault().ActivityId)
-            ).ToList();
+            allActivities.ForEach(x => {
+                var userActivity = _userActivityService.GetUserActivityById(user.Id, x.ActivityId);
+                ChooseActivityViewModel chooseActivity = null;
+                if (userActivity != null)
+                    chooseActivity = new ChooseActivityViewModel { Activity = x, IsChoosen = x.ActivityId == userActivity.ActivityId };
+                else
+                    chooseActivity = new ChooseActivityViewModel { Activity = x };
 
-            return View(otherActivities);
+                chooseActivites.Add(chooseActivity);
+            });
+
+            return View(chooseActivites);
         }
         public IActionResult Choose(int activityId)
         {
             var user = _userManager.GetUserAsync(User).Result;
-            var activity = _userActivityService.GetActivityById(activityId);
+            var activity = _activityService.GetActivityById(activityId);
 
             bool result = _userActivityService.ChooseAnActivity(user, activity);
 
@@ -62,7 +70,7 @@ namespace CutOutWizWebApp.Controllers
         {
             if (model.Rating > 5) { @ViewData["error"] = "Please input 1 to 5 rating."; return RedirectToAction("Rank", new { activityId = model.ActivityId }); }
             var user = _userManager.GetUserAsync(User).Result;
-            var activity = _userActivityService.GetActivityById(model.ActivityId);
+            var activity = _activityService.GetActivityById(model.ActivityId);
             _userActivityService.SetRankAnActivity(user, activity, (Rating)model.Rating);
             return RedirectToAction("Index");
         }

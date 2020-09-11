@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
-namespace CutOutWizWebApp
+namespace SportsBuddyApp
 {
     public class MvcConfiguration: IDesignTimeMvcBuilderConfiguration
     {

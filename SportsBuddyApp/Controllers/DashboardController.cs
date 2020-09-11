@@ -8,7 +8,7 @@ using SportsBuddy.Models;
 
 namespace CutOutWizWebApp.Controllers
 {
-    [Authorize(Roles = "Admin,SuperAdmin,")]
+    [Authorize(Roles = "Admin,SuperAdmin,User")]
     public class DashboardController : Controller
     {
         private readonly IUserActivityService _userActivityService;
@@ -20,26 +20,10 @@ namespace CutOutWizWebApp.Controllers
         {
             DashboardViewModel dashboardViewModel = new DashboardViewModel();
             dashboardViewModel.TopFiveActivities = _userActivityService.GetTopFiveRankActivity();
-             //dashboardViewModel.TopFiveActivities.Select(x => x.UserActivityRankings.Select(y => (int)y.Rating).Sum());
             dashboardViewModel.TopFiveRegions = _userActivityService.GetTopFiveRegionChoosenByTheRegisteredUsers();
             dashboardViewModel.TopUserGroups = _userActivityService.GetTopUsersChoosenByAgeGroup();
 
             return View(dashboardViewModel);
         }
-
-        //public IActionResult CreateActivity()
-        //{
-        //    RecretionalActivity recretionalActivity = new RecretionalActivity();
-
-        //    return View(recretionalActivity);
-        //}
-
-        //[HttpPost]
-        //public IActionResult CreateActivity(RecretionalActivity recretionalActivity)
-        //{
-        //    _userActivityService.AddAnActivity(recretionalActivity);
-
-        //    return View();
-        //}
     }
 }

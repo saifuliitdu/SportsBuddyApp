@@ -6,15 +6,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using CutOutWizWebApp.Services;
 using SportsBuddy.Data;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Http.Features;
-using Microsoft.AspNetCore.Mvc;
 using SportsBuddyApp.Interface;
 using SportsBuddyApp.Services;
+using System.Diagnostics;
 
-namespace CutOutWizWebApp
+namespace SportsBuddyApp
 {
     public class Startup
     {
@@ -44,7 +42,7 @@ namespace CutOutWizWebApp
             });
             services.ConfigureApplicationCookie(options =>
             {
-                options.Cookie.Name = "CutOutWiz.UserIdentity";
+                options.Cookie.Name = "SportsBuddy.UserIdentity";
                 options.Cookie.HttpOnly = true;
                 //options.Cookie.IsEssential = true;
                 // You might want to only set the application cookies over a secure connection:
@@ -59,7 +57,8 @@ namespace CutOutWizWebApp
             });
             //services.AddDbContext<ApplicationDbContext>(options =>
             //    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddEntityFrameworkSqlServer().AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddEntityFrameworkSqlServer().AddDbContext<ApplicationDbContext>(opt =>
+            opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -76,7 +75,7 @@ namespace CutOutWizWebApp
 
             services.AddSession();
             services.AddMvc();
-            //services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
+
             services.Configure<IdentityOptions>(options =>
             {
                 // Default Password settings.
@@ -105,10 +104,10 @@ namespace CutOutWizWebApp
         private void RegisterServices(IServiceCollection services)
         {
             // Add application services.
-            services.AddTransient<IEmailSender, EmailSender>();
             services.AddScoped<IUserActivityService, UserActivityService>();
             services.AddScoped<IUserService, UserService>();
-
+            services.AddScoped<IActivityService, ActivityService>();
+            services.AddScoped<IRegionService, RegionService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -131,11 +130,11 @@ namespace CutOutWizWebApp
             app.UseAuthentication();
             app.UseCors("CORS");
 
-            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
-            {
-                var context = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-                context.Database.Migrate();
-            }
+            //using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            //{
+            //    var context = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+            //    context.Database.Migrate();
+            //}
 
             app.UseMvc(routes =>
             {

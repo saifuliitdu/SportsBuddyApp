@@ -14,15 +14,12 @@
         <link rel="stylesheet" href="~/css/thumbnail-gallery.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
         <link rel="stylesheet" href="~/css/uptown.css" />
-        <link rel="stylesheet" href="~/css/cutoutwizApp.css" />
         <link rel="stylesheet" href="~/css/hover-min.css" />
-        <link rel="stylesheet" href="~/lib/intl-tel-input/css/intlTelInput.css" />
         <link href="~/css/animate.css" rel="stylesheet" />
 
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/appScript.js"></script>
-        <script src="~/lib/intl-tel-input/js/intlTelInput.min.js"></script>
         <script src="~/js/toastr.min.js"></script>
     </environment>
     <!-- Hotjar Tracking Code for http://cutoutwiz.com -->
@@ -52,7 +49,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-
+                    <li><a asp-area="" asp-controller="User" asp-action="Index">Users</a></li>
+                    <li><a asp-area="" asp-controller="Region" asp-action="Index">Region</a></li>
                     <li><a asp-area="" asp-controller="Activity" asp-action="Index">Activity</a></li>
                     <li><a asp-area="" asp-controller="ChooseActivity" asp-action="Index">Choose An Activity</a></li>
                     <li><a asp-area="" asp-controller="Profile" asp-action="YourProfile">Profile</a></li>
