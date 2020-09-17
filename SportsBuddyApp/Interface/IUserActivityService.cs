@@ -18,5 +18,6 @@ namespace SportsBuddyApp.Interface
         List<RegionViewModel> GetTopFiveRegionChoosenByTheRegisteredUsers();
         List<TopUserViewModel> GetTopUsersChoosenByAgeGroup();
         UserActivityRanking GetUserActivityById(string userId, int activityId);
+        RecretionalActivity GetTopOneRankActivity();
     }
 }
